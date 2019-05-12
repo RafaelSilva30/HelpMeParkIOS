@@ -7,14 +7,33 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var email: UITextField!
+    
+    @IBOutlet weak var password: UITextField!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func signUp(_ sender: Any) {
+        Auth.auth().createUser(withEmail: self.email.text!, password: self.password.text!) {
+            (user, error) in
+            if user != nil {
+                print("com sucesso")
+            }
+            if error != nil {
+                print("merda")
+            }
+        }
+    }
+    
 }
 
