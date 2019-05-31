@@ -12,7 +12,9 @@
 		38EB197522879EF300FB6C1D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38EB197322879EF300FB6C1D /* Main.storyboard */; };
 		38EB197722879EF500FB6C1D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38EB197622879EF500FB6C1D /* Assets.xcassets */; };
 		38EB197A22879EF500FB6C1D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38EB197822879EF500FB6C1D /* LaunchScreen.storyboard */; };
-		38EB198222879F9A00FB6C1D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 38EB198122879F9A00FB6C1D /* GoogleService-Info.plist */; };
+		C2A4948A229014E7009735D6 /* RegistarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A49489229014E7009735D6 /* RegistarViewController.swift */; };
+		C2C60E5B229EEE5000E6EC21 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C2C60E5A229EEE5000E6EC21 /* GoogleService-Info.plist */; };
+		C2D1B60022A188E900F7F50F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D1B5FF22A188E900F7F50F /* MapViewController.swift */; };
 		D0B282574821C77EF4BC609D /* Pods_HelpMeParkIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 722A9CD462930F49C4238F0C /* Pods_HelpMeParkIOS.framework */; };
 /* End PBXBuildFile section */
 
@@ -24,9 +26,11 @@
 		38EB197622879EF500FB6C1D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		38EB197922879EF500FB6C1D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		38EB197B22879EF500FB6C1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		38EB198122879F9A00FB6C1D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		722A9CD462930F49C4238F0C /* Pods_HelpMeParkIOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HelpMeParkIOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		877B372C386F75B965BCB6DB /* Pods-HelpMeParkIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelpMeParkIOS.debug.xcconfig"; path = "Target Support Files/Pods-HelpMeParkIOS/Pods-HelpMeParkIOS.debug.xcconfig"; sourceTree = "<group>"; };
+		C2A49489229014E7009735D6 /* RegistarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistarViewController.swift; sourceTree = "<group>"; };
+		C2C60E5A229EEE5000E6EC21 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C2D1B5FF22A188E900F7F50F /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		ED63BC9047D9F93CE299BE19 /* Pods-HelpMeParkIOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelpMeParkIOS.release.xcconfig"; path = "Target Support Files/Pods-HelpMeParkIOS/Pods-HelpMeParkIOS.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -46,7 +50,6 @@
 			isa = PBXGroup;
 			children = (
 				38EB196E22879EF300FB6C1D /* HelpMeParkIOS */,
-				38EB196D22879EF300FB6C1D /* Products */,
 				D140E6A9043E81286F382AE7 /* Pods */,
 				56AF0FF1A53A294DA341E2BA /* Frameworks */,
 			);
@@ -58,6 +61,7 @@
 				38EB196C22879EF300FB6C1D /* HelpMeParkIOS.app */,
 			);
 			name = Products;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		38EB196E22879EF300FB6C1D /* HelpMeParkIOS */ = {
@@ -69,7 +73,10 @@
 				38EB197622879EF500FB6C1D /* Assets.xcassets */,
 				38EB197822879EF500FB6C1D /* LaunchScreen.storyboard */,
 				38EB197B22879EF500FB6C1D /* Info.plist */,
-				38EB198122879F9A00FB6C1D /* GoogleService-Info.plist */,
+				C2C60E5A229EEE5000E6EC21 /* GoogleService-Info.plist */,
+				C2A49489229014E7009735D6 /* RegistarViewController.swift */,
+				C2D1B5FF22A188E900F7F50F /* MapViewController.swift */,
+				38EB196D22879EF300FB6C1D /* Products */,
 			);
 			path = HelpMeParkIOS;
 			sourceTree = "<group>";
@@ -88,7 +95,6 @@
 				877B372C386F75B965BCB6DB /* Pods-HelpMeParkIOS.debug.xcconfig */,
 				ED63BC9047D9F93CE299BE19 /* Pods-HelpMeParkIOS.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -153,7 +159,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				38EB197A22879EF500FB6C1D /* LaunchScreen.storyboard in Resources */,
-				38EB198222879F9A00FB6C1D /* GoogleService-Info.plist in Resources */,
+				C2C60E5B229EEE5000E6EC21 /* GoogleService-Info.plist in Resources */,
 				38EB197722879EF500FB6C1D /* Assets.xcassets in Resources */,
 				38EB197522879EF300FB6C1D /* Main.storyboard in Resources */,
 			);
@@ -194,7 +200,7 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-HelpMeParkIOS/Pods-HelpMeParkIOS-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -202,7 +208,7 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -217,8 +223,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2A4948A229014E7009735D6 /* RegistarViewController.swift in Sources */,
 				38EB197222879EF300FB6C1D /* ViewController.swift in Sources */,
 				38EB197022879EF300FB6C1D /* AppDelegate.swift in Sources */,
+				C2D1B60022A188E900F7F50F /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

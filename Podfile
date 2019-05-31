@@ -8,7 +8,6 @@ target 'HelpMeParkIOS' do
   # Pods for HelpMeParkIOS
 
 pod 'Firebase/Core'
-
 pod 'Firebase/Analytics'
 pod 'Firebase/Auth'
 
