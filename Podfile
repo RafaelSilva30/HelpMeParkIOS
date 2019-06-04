@@ -10,6 +10,14 @@ target 'HelpMeParkIOS' do
 pod 'Firebase/Core'
 pod 'Firebase/Analytics'
 pod 'Firebase/Auth'
+pod 'Firebase/Database'
+pod 'GeoFire', '>= 1.1'
+pod 'Firebase'
+
+
+
+
+
 
 
 end

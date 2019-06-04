@@ -155,6 +155,14 @@
                                 <rect key="frame" x="124" y="44" width="166" height="69"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5DA-n7-h97">
+                                <rect key="frame" x="342" y="131" width="59" height="61"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="current_location"/>
+                                <connections>
+                                    <action selector="receberLocalizacao:" destination="2Yf-S2-T89" eventType="touchUpInside" id="xSZ-0c-Hxs"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="ueA-dq-9CW"/>
@@ -190,7 +198,7 @@
         <!--Adicionar Parque-->
         <scene sceneID="Dd0-ux-plm">
             <objects>
-                <viewController id="oaL-bN-Tfp" sceneMemberID="viewController">
+                <viewController id="oaL-bN-Tfp" customClass="AddNovoParque" customModule="HelpMeParkIOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uzS-z7-RDg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -208,15 +216,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nome do Parque" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KJs-Cb-NK7">
-                                                <rect key="frame" x="59" y="22" width="255" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" red="0.87688273189999999" green="0.98399752380000005" blue="0.99607616659999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Longitude" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nXX-74-1kN">
-                                                <rect key="frame" x="59" y="162" width="126" height="30"/>
+                                                <rect key="frame" x="13" y="38" width="255" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" red="0.87688273189999999" green="0.98399752380000005" blue="0.99607616659999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="textColor"/>
@@ -224,7 +224,7 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Latitude" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="B5s-aZ-y9H">
-                                                <rect key="frame" x="59" y="96" width="126" height="30"/>
+                                                <rect key="frame" x="13" y="110" width="126" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" red="0.87688273189999999" green="0.98399752380000005" blue="0.99607616659999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="textColor"/>
@@ -246,8 +246,63 @@
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="Login:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ezq-J0-mK4"/>
+                                                    <action selector="addParque:" destination="oaL-bN-Tfp" eventType="touchUpInside" id="ywg-OV-7Gq"/>
                                                 </connections>
                                             </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Preço Base:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rdZ-mn-ncH">
+                                                <rect key="frame" x="13" y="235" width="92" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Semana" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0gc-s1-nFy">
+                                                <rect key="frame" x="13" y="286" width="163" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="0.87688273189999999" green="0.98399752380000005" blue="0.99607616659999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Fim-de-Semana" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3NE-Ym-7QZ">
+                                                <rect key="frame" x="13" y="353" width="163" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="0.87688273189999999" green="0.98399752380000005" blue="0.99607616659999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Preço por 15 minutos:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4fS-H6-A4o">
+                                                <rect key="frame" x="13" y="415" width="167" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Semana" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Kp-Sh-Nl2">
+                                                <rect key="frame" x="8" y="452" width="163" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="0.87688273189999999" green="0.98399752380000005" blue="0.99607616659999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Fim-de-Semana" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6HM-Ig-by1">
+                                                <rect key="frame" x="13" y="503" width="163" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="0.87688273189999999" green="0.98399752380000005" blue="0.99607616659999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Longitude" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nXX-74-1kN">
+                                                <rect key="frame" x="13" y="174" width="126" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="0.87688273189999999" green="0.98399752380000005" blue="0.99607616659999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <userDefinedRuntimeAttributes>
@@ -268,6 +323,15 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Adicionar Parque" image="add" id="A2q-iz-dc2"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="latitude" destination="B5s-aZ-y9H" id="xY5-Y2-S9W"/>
+                        <outlet property="longitude" destination="nXX-74-1kN" id="mtC-bo-oeo"/>
+                        <outlet property="nome" destination="KJs-Cb-NK7" id="KEG-aU-ijU"/>
+                        <outlet property="preco15minSemana" destination="9Kp-Sh-Nl2" id="2jP-Sj-b60"/>
+                        <outlet property="preco15minfds" destination="6HM-Ig-by1" id="ILx-S7-pZX"/>
+                        <outlet property="precoBaseFds" destination="3NE-Ym-7QZ" id="uy4-4F-gXK"/>
+                        <outlet property="preçoBaseSemana" destination="0gc-s1-nFy" id="e3M-1e-ZBn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aAO-Om-6Pj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -388,6 +452,7 @@
     <resources>
         <image name="add" width="25" height="25"/>
         <image name="back" width="500" height="281"/>
+        <image name="current_location" width="40" height="40"/>
         <image name="email" width="512" height="512"/>
         <image name="list" width="25" height="25"/>
         <image name="logoti" width="200" height="200"/>
