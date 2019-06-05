@@ -12,6 +12,7 @@
 		38EB197522879EF300FB6C1D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38EB197322879EF300FB6C1D /* Main.storyboard */; };
 		38EB197722879EF500FB6C1D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38EB197622879EF500FB6C1D /* Assets.xcassets */; };
 		38EB197A22879EF500FB6C1D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38EB197822879EF500FB6C1D /* LaunchScreen.storyboard */; };
+		3EAEABAF22A744BA007697E2 /* Parques.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAEABAE22A744BA007697E2 /* Parques.swift */; };
 		C25DAB2422A1F33400B9FC0B /* AddNovoParque.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25DAB2322A1F33400B9FC0B /* AddNovoParque.swift */; };
 		C2A4948A229014E7009735D6 /* RegistarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A49489229014E7009735D6 /* RegistarViewController.swift */; };
 		C2C60E5B229EEE5000E6EC21 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C2C60E5A229EEE5000E6EC21 /* GoogleService-Info.plist */; };
@@ -27,6 +28,7 @@
 		38EB197622879EF500FB6C1D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		38EB197922879EF500FB6C1D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		38EB197B22879EF500FB6C1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3EAEABAE22A744BA007697E2 /* Parques.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parques.swift; sourceTree = "<group>"; };
 		722A9CD462930F49C4238F0C /* Pods_HelpMeParkIOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HelpMeParkIOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		877B372C386F75B965BCB6DB /* Pods-HelpMeParkIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelpMeParkIOS.debug.xcconfig"; path = "Target Support Files/Pods-HelpMeParkIOS/Pods-HelpMeParkIOS.debug.xcconfig"; sourceTree = "<group>"; };
 		C25DAB2322A1F33400B9FC0B /* AddNovoParque.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNovoParque.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 				C2D1B5FF22A188E900F7F50F /* MapViewController.swift */,
 				C25DAB2322A1F33400B9FC0B /* AddNovoParque.swift */,
 				38EB196D22879EF300FB6C1D /* Products */,
+				3EAEABAE22A744BA007697E2 /* Parques.swift */,
 			);
 			path = HelpMeParkIOS;
 			sourceTree = "<group>";
@@ -235,6 +238,7 @@
 				38EB197022879EF300FB6C1D /* AppDelegate.swift in Sources */,
 				C2D1B60022A188E900F7F50F /* MapViewController.swift in Sources */,
 				C25DAB2422A1F33400B9FC0B /* AddNovoParque.swift in Sources */,
+				3EAEABAF22A744BA007697E2 /* Parques.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
