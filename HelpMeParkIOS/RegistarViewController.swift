@@ -29,7 +29,7 @@ class RegistarViewController: UIViewController,UITextFieldDelegate {
     @IBAction func buttonRegistar(_ sender: Any) {
         Auth.auth().createUser(withEmail: email.text!, password: password.text!) { (user, error) in
             if error == nil {
-                let alertSucess = UIAlertController(title: "Registo", message: "Conta Registada com sucesso ! ", preferredStyle: .alert)
+                let alertSucess = UIAlertController(title: "Registo ", message: "Conta Registada com sucesso ! ", preferredStyle: .alert)
                 
                 
                 let image = UIImage(named: "check")
