@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import FirebaseAuth
+import FirebaseDatabase
 
 class RegistarViewController: UIViewController,UITextFieldDelegate {
     
@@ -41,6 +42,13 @@ class RegistarViewController: UIViewController,UITextFieldDelegate {
                 alertSucess.addAction(UIAlertAction(title: "OK", style: .default))
                 
                 self.present(alertSucess, animated: true)
+                
+                //Criar username com a conta
+                let uid = (Auth.auth().currentUser?.uid)!
+                let ref = Database.database().reference().child("Users").child(uid)
+                ref.setValue(["uid": uid, "Username": self.username.text!, "CreationDate": String(describing: Date())])
+                //---------------
+    
                 self.performSegue(withIdentifier:"registerToLogin", sender: self)
                 
             } else {
