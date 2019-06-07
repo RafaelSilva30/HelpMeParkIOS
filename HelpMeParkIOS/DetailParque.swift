@@ -12,13 +12,13 @@ import UIKit
 
 class DetailParque: UIViewController {
     
-   var post: Post?
+   
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-         lblName.text = post.lblName
+       
         
     }
     
