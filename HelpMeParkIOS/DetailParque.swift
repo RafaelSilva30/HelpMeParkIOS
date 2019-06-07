@@ -12,13 +12,17 @@ import UIKit
 
 class DetailParque: UIViewController {
     
-   
+    @IBOutlet weak var lblName: UILabel!
+    
+    var nome = String()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-       
+        
+      lblName.text! = nome
+        
+        
         
     }
     
@@ -26,11 +30,9 @@ class DetailParque: UIViewController {
 
     
  
-    @IBOutlet weak var lblName: UILabel!
     
-    @IBOutlet weak var lblLongitude: UILabel!
     
-    @IBOutlet weak var lblLatitude: UILabel!
+    
     
     
     

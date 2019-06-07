@@ -14,6 +14,8 @@
 		38EB197A22879EF500FB6C1D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38EB197822879EF500FB6C1D /* LaunchScreen.storyboard */; };
 		3EAEABAF22A744BA007697E2 /* Parques.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAEABAE22A744BA007697E2 /* Parques.swift */; };
 		C211AF8C22A857F1004E33CA /* DetailParque.swift in Sources */ = {isa = PBXBuildFile; fileRef = C211AF8B22A857F1004E33CA /* DetailParque.swift */; };
+		C211AF8E22AA81BA004E33CA /* Parque.swift in Sources */ = {isa = PBXBuildFile; fileRef = C211AF8D22AA81BA004E33CA /* Parque.swift */; };
+		C211AF9322AAA588004E33CA /* ParqueViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C211AF9222AAA588004E33CA /* ParqueViewCell.swift */; };
 		C25DAB2422A1F33400B9FC0B /* AddNovoParque.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25DAB2322A1F33400B9FC0B /* AddNovoParque.swift */; };
 		C2A4948A229014E7009735D6 /* RegistarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A49489229014E7009735D6 /* RegistarViewController.swift */; };
 		C2C60E5B229EEE5000E6EC21 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C2C60E5A229EEE5000E6EC21 /* GoogleService-Info.plist */; };
@@ -33,6 +35,8 @@
 		722A9CD462930F49C4238F0C /* Pods_HelpMeParkIOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HelpMeParkIOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		877B372C386F75B965BCB6DB /* Pods-HelpMeParkIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelpMeParkIOS.debug.xcconfig"; path = "Target Support Files/Pods-HelpMeParkIOS/Pods-HelpMeParkIOS.debug.xcconfig"; sourceTree = "<group>"; };
 		C211AF8B22A857F1004E33CA /* DetailParque.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailParque.swift; sourceTree = "<group>"; };
+		C211AF8D22AA81BA004E33CA /* Parque.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parque.swift; sourceTree = "<group>"; };
+		C211AF9222AAA588004E33CA /* ParqueViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ParqueViewCell.swift; path = ../ParqueViewCell.swift; sourceTree = "<group>"; };
 		C25DAB2322A1F33400B9FC0B /* AddNovoParque.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNovoParque.swift; sourceTree = "<group>"; };
 		C2A49489229014E7009735D6 /* RegistarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistarViewController.swift; sourceTree = "<group>"; };
 		C2C60E5A229EEE5000E6EC21 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -73,7 +77,9 @@
 		38EB196E22879EF300FB6C1D /* HelpMeParkIOS */ = {
 			isa = PBXGroup;
 			children = (
+				C211AF8F22AA8403004E33CA /* New Group */,
 				38EB196F22879EF300FB6C1D /* AppDelegate.swift */,
+				C211AF9222AAA588004E33CA /* ParqueViewCell.swift */,
 				38EB197122879EF300FB6C1D /* ViewController.swift */,
 				38EB197322879EF300FB6C1D /* Main.storyboard */,
 				38EB197622879EF500FB6C1D /* Assets.xcassets */,
@@ -86,6 +92,7 @@
 				38EB196D22879EF300FB6C1D /* Products */,
 				3EAEABAE22A744BA007697E2 /* Parques.swift */,
 				C211AF8B22A857F1004E33CA /* DetailParque.swift */,
+				C211AF8D22AA81BA004E33CA /* Parque.swift */,
 			);
 			path = HelpMeParkIOS;
 			sourceTree = "<group>";
@@ -96,6 +103,13 @@
 				722A9CD462930F49C4238F0C /* Pods_HelpMeParkIOS.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C211AF8F22AA8403004E33CA /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 		D140E6A9043E81286F382AE7 /* Pods */ = {
@@ -237,10 +251,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				C211AF8C22A857F1004E33CA /* DetailParque.swift in Sources */,
+				C211AF9322AAA588004E33CA /* ParqueViewCell.swift in Sources */,
 				C2A4948A229014E7009735D6 /* RegistarViewController.swift in Sources */,
 				38EB197222879EF300FB6C1D /* ViewController.swift in Sources */,
 				38EB197022879EF300FB6C1D /* AppDelegate.swift in Sources */,
 				C2D1B60022A188E900F7F50F /* MapViewController.swift in Sources */,
+				C211AF8E22AA81BA004E33CA /* Parque.swift in Sources */,
 				C25DAB2422A1F33400B9FC0B /* AddNovoParque.swift in Sources */,
 				3EAEABAF22A744BA007697E2 /* Parques.swift in Sources */,
 			);
