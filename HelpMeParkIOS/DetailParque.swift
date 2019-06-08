@@ -14,13 +14,17 @@ class DetailParque: UIViewController {
     
     @IBOutlet weak var lblName: UILabel!
     
-    var nome = String()
+    var parquesList: String = ""
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-      lblName.text! = nome
+        print(parquesList)
+        let parque = parquesList
+        print(parque)
+        lblName.text = parque
+        
         
         
         

@@ -13,7 +13,7 @@ import UIKit
 class Parques: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
   
-    var parquesList = [parque1]()
+    var parquesList = [Parque]()
     
     
     struct parque1 {
@@ -34,9 +34,6 @@ class Parques: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 150
-    }
     
     
     
@@ -49,7 +46,7 @@ class Parques: UIViewController, UITableViewDelegate, UITableViewDataSource {
      
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ParqueViewCell
          
-        cell.lblName.text = self.parquesList[indexPath.row].nome
+        cell.lblName.text = self.parquesList[indexPath.row].nomeParque
         
        
         
@@ -73,41 +70,34 @@ class Parques: UIViewController, UITableViewDelegate, UITableViewDataSource {
  
     
     
-    func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
+   func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
         
-        print("Row \(indexPath.row)selected")
-        selectedLabel = self.parquesList[indexPath.row].nome
-        print(self.parquesList[indexPath.row].nome)
-        performSegue(withIdentifier: "detalheParque", sender: self)
+        let alert = UIAlertController(title: "Informacoes", message: parquesList[indexPath.row].nomeParque, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Fechar", style: UIAlertAction.Style.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
     
    
-   /*
+  
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(parquesList[indexPath.row].nomeParque)
+        self.performSegue(withIdentifier: "detalheParque", sender: indexPath)
+    }
+    
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        if segue.identifier == "detalheParque",
-        
-            let nextScene = segue.destination as? DetailParque ,
-            let indexPath = self.tableView.indexPathForSelectedRow {
-            let data = parquesList[indexPath.row]
-            print("hello")
-            nextScene.nome = data.nomeParque!
-        }
- 
- */
-    
-    
-    
-   func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    
-    if(segue.identifier == "detalheParque") {
-            let vc = segue.destination as! DetailParque
-            
-            vc.nome = selectedLabel!
+        if segue.identifier == "detalheParque" {
+            let idx = sender as! IndexPath
+            let vcdetalhe = (segue.destination as! DetailParque)
+            vcdetalhe.parquesList = parquesList[idx.row].nomeParque
         }
     }
-        
+    
+    
+  
     
     
     
@@ -135,18 +125,7 @@ class Parques: UIViewController, UITableViewDelegate, UITableViewDataSource {
             
     
         
-    // IR BUSCAR OS PONTOS E ALTERAR SE ALGUM FOR ADICIONADO
-         /*
-    ref.child("Parques").observe(.childAdded) { (snapshot) in
-        let post = snapshot.key
-        
-        print(post)
-        self.postData.append(post)
-        
-        self.tableView.reloadData()
- 
-  */
-        
+  
          ref.child("Parques").observe(.childAdded,    with: {
                 snapshot in
                 
@@ -156,7 +135,7 @@ class Parques: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 
                 print(nomeParque)
                 
-                self.parquesList.append(parque1(nome: nomeParque))
+                self.parquesList.append(Parque(nome: nomeParque))
                 
                 self.tableView.reloadData()
                 

@@ -11,11 +11,11 @@ import  UIKit
 
 class Parque: NSObject {
     
-    var nomeParque: String?
+    var nomeParque: String = ""
     
     
     
-    init(nome: String?) {
+    init(nome: String) {
         
         self.nomeParque = nome
         
