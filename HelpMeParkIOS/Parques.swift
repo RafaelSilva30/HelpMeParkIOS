@@ -36,18 +36,21 @@ class Parques: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     
     
+    @IBOutlet weak var nrlugares: UILabel!
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
       
         
-     //Design Cell
-        
      
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ParqueViewCell
-         
-        cell.lblName.text = self.parquesList[indexPath.row].nomeParque
         
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ParqueViewCell
+        
+        
+        
+        cell.lblName.text = self.parquesList[indexPath.row].nomeParque
+        cell.distancia.text = self.parquesList[indexPath.row].nrLugares + " lugares"
        
         
       
@@ -132,10 +135,11 @@ class Parques: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 print(snapshot)
                 
                 let nomeParque = (snapshot.value as? NSDictionary)!["nome"] as! String
-                
+            let lugares = (snapshot.value as? NSDictionary)!["lugares"] as! String
+            
                 print(nomeParque)
                 
-                self.parquesList.append(Parque(nome: nomeParque))
+            self.parquesList.append(Parque(nome: nomeParque,lugares: lugares))
                 
                 self.tableView.reloadData()
                 
