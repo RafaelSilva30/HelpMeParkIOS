@@ -134,12 +134,12 @@ class Parques: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 
                 print(snapshot)
                 
-                let nomeParque = (snapshot.value as? NSDictionary)!["nome"] as! String
-            let lugares = (snapshot.value as? NSDictionary)!["lugares"] as! String
+                let nome = (snapshot.value as? NSDictionary)!["nome"] as! String
+                		let lugares = (snapshot.value as? NSDictionary)!["lugares"] as! String
             
-                print(nomeParque)
+                print(nome)
                 
-            self.parquesList.append(Parque(nome: nomeParque,lugares: lugares))
+            self.parquesList.append(Parque(nome: nome,lugares: lugares))
                 
                 self.tableView.reloadData()
                 
