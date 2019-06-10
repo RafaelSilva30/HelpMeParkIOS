@@ -28,6 +28,7 @@ class Parques: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         return parquesList.count
         
+        
     }
     
     
@@ -49,13 +50,11 @@ class Parques: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
         
         //Label do Nome
-        cell.lblName.font = UIFont(name: "Arial-BoldMT", size:20);
+        cell.lblName.font = UIFont(name: "Arial-BoldMT", size:30);
         cell.lblName.textColor = UIColor.white
         cell.lblName.sizeToFit()
         
-        //Label do Nr de Lugares
 
-        
         cell.accessoryType = UITableViewCell.AccessoryType.detailDisclosureButton
        
         cell.backgroundView = UIImageView(image: UIImage(named: "table"))
@@ -76,7 +75,7 @@ class Parques: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
    func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
         
-    let alert = UIAlertController(title: "Informacoes", message:"Nome: " + parquesList[indexPath.row].nomeParque, preferredStyle: UIAlertController.Style.alert)
+    let alert = UIAlertController(title: "Informacoes", message:"Nome do Parque: " + parquesList[indexPath.row].nomeParque, preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "Fechar", style: UIAlertAction.Style.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
@@ -102,12 +101,13 @@ class Parques: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
         return 100
     }
 
     
   
-    
+   
     
     
 
@@ -128,14 +128,15 @@ class Parques: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
         override func viewDidLoad() {
             
-        tableView.backgroundView = UIImageView(image: UIImage(named: "tableBack"))
+        
 
         tableView.delegate = self
             
-            //Tamanho da célula
+     
+            tableView.backgroundView = UIImageView(image: UIImage(named: "table"))
            
             
-        
+            
   
             ref.child("Parques").observe(.childAdded,    with: {
                 snapshot in
