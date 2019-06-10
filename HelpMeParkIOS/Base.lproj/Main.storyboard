@@ -1088,7 +1088,7 @@
                         <outlet property="dispComent" destination="gBn-Rv-LvN" id="ZYB-YT-uI8"/>
                         <outlet property="lblRatingBar" destination="TE7-j3-wh6" id="Eye-8w-bfJ"/>
                         <outlet property="nomeParque" destination="XYZ-6l-Vpa" id="wE7-Mi-jSB"/>
-                        <outlet property="nomeUserAtual" destination="HhN-g6-3bI" id="kVY-mg-rJA"/>
+                        <outlet property="nomeUserAtual" destination="HhN-g6-3bI" id="3eG-vr-Bew"/>
                         <outlet property="nomeUserComent" destination="67t-2g-0Hc" id="f8r-LQ-Eoy"/>
                         <outlet property="observacoes" destination="fz3-Bf-NWi" id="EKP-Bf-Qxx"/>
                         <outlet property="ratingBar" destination="AVN-fF-88O" id="Jfs-i1-jIq"/>
