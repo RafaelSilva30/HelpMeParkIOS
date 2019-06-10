@@ -43,16 +43,20 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     var nomeP: String = ""
     
+    var utilizador: String = ""
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        print(utilizador)
+        
         let centerLocation = CLLocation(latitude: 12, longitude: 12)
         
         centerMapOnLocation(location: centerLocation)
         
-      
+        print(tabBarController?.viewControllers)
         
        
         manager.delegate = self

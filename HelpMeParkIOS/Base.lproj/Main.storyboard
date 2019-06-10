@@ -71,7 +71,8 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="Login:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aUv-Zt-fZN"/>
+                                            <action selector="EntrarComoConvidado:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7L1-en-yQK"/>
+                                            <segue destination="PIc-gp-kkH" kind="show" identifier="convidadoSegue" id="4LX-fm-1uw"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JfI-gH-c04">
@@ -89,6 +90,7 @@
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="Login:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TQy-I0-s6H"/>
+                                            <segue destination="PIc-gp-kkH" kind="show" identifier="loginSegue" id="Vgq-fz-lOb"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BZM-Re-MBH">
@@ -129,7 +131,6 @@
                     <connections>
                         <outlet property="email" destination="yUC-rL-94B" id="htv-3u-rUf"/>
                         <outlet property="password" destination="v90-rU-LMa" id="DuG-cr-2Rk"/>
-                        <segue destination="PIc-gp-kkH" kind="show" identifier="loginSegue" id="VJn-4s-aKu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -355,13 +356,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oA8-rj-od2">
-                                                    <rect key="frame" x="46" y="30" width="42" height="20.5"/>
+                                                    <rect key="frame" x="130" y="30" width="42" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoti" translatesAutoresizingMaskIntoConstraints="NO" id="hlV-Nx-JM5">
-                                                    <rect key="frame" x="20" y="10" width="16" height="23.5"/>
+                                                    <rect key="frame" x="20" y="10" width="100" height="23.5"/>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
@@ -463,7 +464,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="Pmp-ho-4WG">
             <objects>
-                <tabBarController id="PIc-gp-kkH" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="tabBar" id="PIc-gp-kkH" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="KcB-9Q-QuJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1064,6 +1065,7 @@
         <image name="user" width="2240" height="2240"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="Vgq-fz-lOb"/>
         <segue reference="axL-ud-Acp"/>
     </inferredMetricsTieBreakers>
 </document>
