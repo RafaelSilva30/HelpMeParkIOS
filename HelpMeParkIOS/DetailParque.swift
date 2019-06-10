@@ -39,6 +39,7 @@ class DetailParque: UIViewController {
         let parque = parquesList
         print(parque)
         
+        lblName.sizeToFit()
         
         
         ref.child("Parques").observe(.childAdded,    with: {
@@ -46,7 +47,6 @@ class DetailParque: UIViewController {
             
             
             let nomeParque = (snapshot.value as? NSDictionary)!["nome"] as! String
-            let nrLugares = (snapshot.value as? NSDictionary)!["lugares"] as! String
             let PrecoBaseSemana = (snapshot.value as? NSDictionary)!["PreçoBaseSemana"] as! String
             let Preco15Minutos = (snapshot.value as? NSDictionary)!["Preço15MinutosSemana"] as! String
             
@@ -54,12 +54,13 @@ class DetailParque: UIViewController {
             let Preco15MinutosFds = (snapshot.value as? NSDictionary)!["Preço15MinutosFimdeSemana"] as! String
             
             if( parque == nomeParque){
+                
                 self.lblName.text = parque	
-                self.nrLugaresLbl.text = nrLugares
-                self.PrecoBaseSemanaLbl.text = PrecoBaseSemana
-                self.Preco15MinutosLbl.text = Preco15Minutos
-                self.PrecoBaseFdsLbl.text = PrecoBaseFds
-                self.Preco15MinutosFdsLbl.text = Preco15MinutosFds
+                
+                self.PrecoBaseSemanaLbl.text  = PrecoBaseSemana + "€"
+                self.Preco15MinutosLbl.text = Preco15Minutos + "€"
+                self.PrecoBaseFdsLbl.text = PrecoBaseFds + "€"
+                self.Preco15MinutosFdsLbl.text = Preco15MinutosFds + "€"
                 
                
             }
