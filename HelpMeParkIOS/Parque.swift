@@ -12,13 +12,12 @@ import  UIKit
 class Parque: NSObject {
     
     var nomeParque: String = ""
-    var nrLugares: String = ""
+
     
-    
-    init(nome: String, lugares: String) {
+    init(nome: String) {
         
         self.nomeParque = nome
-        self.nrLugares = lugares
+
         
     }
 }
