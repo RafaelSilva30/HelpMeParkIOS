@@ -13,6 +13,21 @@ import MapKit
 import CoreLocation
 import GeoFire
 
+//CUSTOM PIN
+
+class customPin: NSObject,MKAnnotation {
+    
+    var coordinate: CLLocationCoordinate2D
+    var title: String?
+    var subtitle: String?
+    init(pinTitle: String, location:CLLocationCoordinate2D, pinSub: String){
+        self.coordinate = location
+        self.title = pinTitle
+        self.subtitle = pinSub
+        
+    }
+}
+
 class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     
     
@@ -28,32 +43,47 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let centerLocation = CLLocation(latitude:41.69323, longitude: -8.83287)
+        let centerLocation = CLLocation(latitude: 12, longitude: 12)
         
         centerMapOnLocation(location: centerLocation)
         
-       
+      
         
+       
         manager.delegate = self
         manager.desiredAccuracy = kCLLocationAccuracyBest
         manager.requestWhenInUseAuthorization()
+        
         
         ref.child("Parques").observe(.childAdded, with: { (snapshot) in
             
             let latitude = (snapshot.value as AnyObject?)!["Latitude"] as! String?
             let longitude = (snapshot.value as AnyObject?)!["Longitude"] as! String?
             
-            let annotation = MKPointAnnotation()
-            annotation.coordinate = CLLocationCoordinate2D(latitude: (Double(latitude!))!, longitude: (Double(longitude!))!)
+            let point = MKPointAnnotation()
             
-            annotation.title = (snapshot.value as AnyObject?)!["nome"] as! String?
-            	
-            self.mapa.addAnnotation(annotation)
+          
+            let titulo  =  (snapshot.value as AnyObject?)!["nome"] as! String?
+            
+            let subtitulo = (snapshot.value as AnyObject?)!["lugares"] as! String?
+           
+            
+            let coordenadas = CLLocationCoordinate2D(latitude: (Double(latitude!))!, longitude: (Double(longitude!))!)
+            
+            let pin = customPin(pinTitle:"Nome: " + titulo!, location: coordenadas, pinSub: "Numero de Lugares: " + subtitulo!)
+            
+            self.mapa.delegate = self
+            
+            self.mapa.addAnnotation(pin);
+            
+            
         })
         
        
         
     }
+    
+    
     
    
         
@@ -82,14 +112,39 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         let span:MKCoordinateSpan = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
         let myLocation:CLLocationCoordinate2D = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude)
         let region:MKCoordinateRegion = MKCoordinateRegion(center: myLocation, span: span)
-      //  let annotation = MKPointAnnotation()
-      // annotation.coordinate = location.coordinate
+     
         mapa.setRegion(region, animated: true)
-       // self.mapa.addAnnotation(annotation)
         
         manager.stopUpdatingLocation()
        
       
+    }
+    
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        
+        //SEGUE
+    }
+    
+ 
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        
+       
+        let reuseIdentifier = "pin"
+        
+        
+            let annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: reuseIdentifier)
+            
+            annotationView.image = UIImage(named: "mapMarker")
+            annotationView.canShowCallout = true
+            
+       let button = UIButton(type: .detailDisclosure) as UIButton
+        
+        annotationView.rightCalloutAccessoryView = button
+        
+        
+       return annotationView
+        
     }
     
     
