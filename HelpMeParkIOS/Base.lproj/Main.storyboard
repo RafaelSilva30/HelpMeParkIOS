@@ -521,12 +521,28 @@
                                     <action selector="receberLocalizacao:" destination="2Yf-S2-T89" eventType="touchUpInside" id="xSZ-0c-Hxs"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E2g-G2-m1z">
+                                <rect key="frame" x="350" y="92" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZZ2-XQ-PHa">
+                                <rect key="frame" x="20" y="92" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="ueA-dq-9CW"/>
                     </view>
                     <navigationItem key="navigationItem" id="V2t-EO-fVz"/>
                     <connections>
+                        <outlet property="auxLat" destination="ZZ2-XQ-PHa" id="9C3-9P-Y6w"/>
+                        <outlet property="auxLong" destination="E2g-G2-m1z" id="Hl5-7e-oZg"/>
                         <outlet property="mapa" destination="CpF-px-oMf" id="nDz-M2-ube"/>
                         <segue destination="gzy-TB-NUa" kind="show" identifier="pinDetalhe" id="axL-ud-Acp"/>
                     </connections>

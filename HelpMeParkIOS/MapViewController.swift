@@ -29,6 +29,9 @@ class customPin: NSObject,MKAnnotation {
     }
     
 }
+
+
+
  
 
 class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
@@ -36,14 +39,21 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     @IBOutlet weak var mapa: MKMapView!
     
+    
+    @IBOutlet weak var auxLat: UILabel!
+    
+    @IBOutlet weak var auxLong: UILabel!
+    
+    
     let manager = CLLocationManager()
     
     let ref = Database.database().reference()
     
+    let reff = Database.database().reference()
     
     var nomeP: String = ""
     
-    
+    var coordenadas = CLLocationCoordinate2D()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -83,8 +93,12 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             
         })
         
-       
+      
         
+        
+        
+   
+    
     }
     
     
@@ -109,8 +123,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     @IBAction func receberLocalizacao(_ sender: Any) {
         manager.startUpdatingLocation()
-        
-        
+       
     }
     
     
@@ -118,11 +131,29 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         let location = locations[0]
         let span:MKCoordinateSpan = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
         let myLocation:CLLocationCoordinate2D = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude)
+        self.coordenadas = myLocation
+        
+        print(coordenadas)
         let region:MKCoordinateRegion = MKCoordinateRegion(center: myLocation, span: span)
      
         mapa.setRegion(region, animated: true)
         
+        let uid = (Auth.auth().currentUser?.uid)!
+        let ref = Database.database().reference().child("Users").child(uid)
+        
+        
+         self.auxLat.text = String(format:"%.4f", self.coordenadas.latitude)
+        
+        self.auxLong.text = String(format:"%.4f", self.coordenadas.longitude)
+        
+        let data1 = ["latitude": auxLat.text, "longitude": auxLong.text]
+        self.reff.child("Users").child(uid).child("latestLoc").setValue(data1)
+        
+        
         manager.stopUpdatingLocation()
+        
+       
+        
        
       
     }
@@ -145,7 +176,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             
             let des = segue.destination as! DetailParque
             des.parquesList = nomeP
-            print(des.ann)
+            
+            
         }
     }
 

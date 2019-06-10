@@ -9,18 +9,22 @@
 import Foundation
 import FirebaseDatabase
 import UIKit
+import MapKit
+import FirebaseAuth
 
 class Parques: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
   
     var parquesList = [Parque]()
     
+    var coordenadas = [CLLocationCoordinate2D]()
     
-    
+    var currentLoc = CLLocationCoordinate2D()
     
     var selectedLabel:String?
     
     
+    var dbHandle: DatabaseHandle?
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -31,6 +35,8 @@ class Parques: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
     }
     
+    
+
     
     
     @IBOutlet weak var nrlugares: UILabel!
@@ -124,12 +130,16 @@ class Parques: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
    
     
-        @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableView: UITableView!
     
-        override func viewDidLoad() {
+    
+    
+    
+    
+    override func viewDidLoad() {
             
         
-
+        
         tableView.delegate = self
             
      
@@ -146,19 +156,49 @@ class Parques: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
             
                 let nome = (snapshot.value as? NSDictionary)!["nome"] as! String
-
-                print(nome)
+                
+                let auxLat = (snapshot.value as? NSDictionary)!["Latitude"] as! String
+                
+                let auxLong = (snapshot.value as? NSDictionary)!["Longitude"] as! String
+                
+                let latitude = Double(auxLat)
+                let longitude = Double(auxLong)
                 
             self.parquesList.append(Parque(nome: nome))
+                
+                self.coordenadas.append(CLLocationCoordinate2D(latitude: Double(auxLat) as! CLLocationDegrees, longitude: Double(auxLong) as! CLLocationDegrees))
                 
                 self.tableView.reloadData()
                 
                 print(self.parquesList)
+
+               
+                print("kajsdkjasdkjasdnas")
                 
+                print(self.coordenadas)
                 
             })
-    
         
+      /*  let uid = (Auth.auth().currentUser?.uid)!
+         dbHandle = ref.child("Users").child(uid).child("latestLoc").observe(.childAdded,    with: {
+            snapshot in
+            
+            print(snapshot)
+            
+            let currLat = (snapshot.value as? NSDictionary)!["latitude"] as! String
+            
+            
+            
+            let currLong = (snapshot.value as? NSDictionary)!["longitude"] as! String
+            
+            
+            
+            self.currentLoc = CLLocationCoordinate2D(latitude: Double(currLat) as! CLLocationDegrees, longitude: Double(currLong) as! CLLocationDegrees)
+            print("aaaaaaaaaaaaaaaaaaaa")
+            print(self.currentLoc)
+        })
+       
+        */
     }
     
 }
