@@ -26,8 +26,6 @@ class ViewController: UIViewController, UITextViewDelegate {
         password.text! = "123456"
         
         
-        
-        
     }
     
     
@@ -49,62 +47,68 @@ class ViewController: UIViewController, UITextViewDelegate {
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
         if(segue.identifier == "convidadoSegue"){
             let barViewControllers = segue.destination as! UITabBarController
             let destinationNv = barViewControllers.viewControllers?[0] as! UINavigationController
             let destinationViewController = destinationNv.viewControllers[0] as! MapViewController
             destinationViewController.utilizador = autenticado
         }
+
         
-        if(segue.identifier == "loginSegue"){
+        if(segue.identifier == "adminSegue"){
             let barViewControllers = segue.destination as! UITabBarController
             let destinationNv = barViewControllers.viewControllers?[0] as! UINavigationController
             let destinationViewController = destinationNv.viewControllers[0] as! MapViewController
             destinationViewController.utilizador = autenticado
        
     }
-        
-    }
  
+ 
+ 
+    
+ 
+}
+    func Entrar(){
+        
+        Auth.auth().signIn(withEmail: email.text!, password: password.text!) { (user, error) in
+            
+            if error == nil {
+                
+                self.autenticado = "user"
+                
+                
+                self.performSegue(withIdentifier: "adminSegue", sender: self)
+                
+            }else{
+                
+                self.alertFail()
+            }
+        }
+    }
     
 
     
     @IBAction func Login(_ sender: Any) {
         
         
-    
-                Auth.auth().signIn(withEmail: email.text!, password: password.text!) { (user, error) in
+             if (self.email.text! == "admin" && self.password.text! == "admin"){
                     
-                if error == nil{
+                    self.autenticado = "admin"
                     
-                    self.autenticado = "userRegistado"
-                    
-                    
-                    self.performSegue(withIdentifier: "loginSegue", sender: self)
-                    
-                    
-                }else{
-                    self.alertFail()
-                    }
-                }
-    
-        
-    
-        if (self.email.text! == "admin" && self.password.text! == "admin"){
+                    self.performSegue(withIdentifier: "adminSegue", sender: self)
             
-            self.autenticado = "admin"
+            } else {
                 
-            self.performSegue(withIdentifier: "loginSegue", sender: self)
-            
-        } else {
-            
-            
-            self.alertFail()
-            
+                Entrar()
+              
+                
+               
         }
     }
+    
         
-        
+    
         
     
     

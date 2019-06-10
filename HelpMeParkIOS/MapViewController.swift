@@ -34,6 +34,8 @@ class customPin: NSObject,MKAnnotation {
 class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     
     
+    
+    
     @IBOutlet weak var mapa: MKMapView!
     
     let manager = CLLocationManager()
@@ -43,7 +45,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     var nomeP: String = ""
     
-    var utilizador: String = ""
+    
     
     
     
@@ -56,7 +58,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         
         centerMapOnLocation(location: centerLocation)
         
-        print(tabBarController?.viewControllers)
+       
         
        
         manager.delegate = self

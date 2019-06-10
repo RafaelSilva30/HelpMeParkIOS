@@ -90,7 +90,6 @@
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="Login:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TQy-I0-s6H"/>
-                                            <segue destination="PIc-gp-kkH" kind="show" identifier="loginSegue" id="Vgq-fz-lOb"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BZM-Re-MBH">
@@ -131,6 +130,7 @@
                     <connections>
                         <outlet property="email" destination="yUC-rL-94B" id="htv-3u-rUf"/>
                         <outlet property="password" destination="v90-rU-LMa" id="DuG-cr-2Rk"/>
+                        <segue destination="PIc-gp-kkH" kind="show" identifier="adminSegue" id="zJJ-LM-Faz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -553,7 +553,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eAw-0e-AjA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1758" y="497"/>
+            <point key="canvasLocation" x="-2065" y="509"/>
         </scene>
         <!--Adicionar Parque-->
         <scene sceneID="Dd0-ux-plm">
@@ -1149,7 +1149,7 @@
         <image name="user" width="2240" height="2240"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Vgq-fz-lOb"/>
+        <segue reference="zJJ-LM-Faz"/>
         <segue reference="axL-ud-Acp"/>
     </inferredMetricsTieBreakers>
 </document>
