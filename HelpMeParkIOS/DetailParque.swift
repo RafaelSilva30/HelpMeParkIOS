@@ -31,6 +31,10 @@ class DetailParque: UIViewController {
     @IBOutlet weak var Preco15MinutosFdsLbl: UILabel!
     var parquesList: String = ""
     
+    
+    
+    @IBOutlet weak var levelParque: UILabel!
+    
     let ref = Database.database().reference()
     let reff = Database.database().reference()
     
@@ -94,8 +98,38 @@ class DetailParque: UIViewController {
             self.nomeUserComent.text = nomeUser
             self.dataComent.text = dataComent
             
+            
+            valor()
         
         })
+        
+        self.ratingComent.settings.starSize = 27
+        
+        
+        
+        func valor(){
+            switch self.ratingComent.rating {
+            case 1:
+                self.levelParque.text = "Parque Vazio"
+                
+            case 2:
+                self.levelParque.text = "Quase Vazio"
+            case 3:
+                self.levelParque.text = "Meio Cheio"
+            case 4:
+                self.levelParque.text = "Parque quase cheio"
+            case 5:
+                self.levelParque.text = "Parque Cheio"
+                
+            default:
+                self.levelParque.text = ""
+            }
+            
+            
+        }
+        
+        
+        
     }
     
     
