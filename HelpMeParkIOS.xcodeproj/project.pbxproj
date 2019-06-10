@@ -12,6 +12,7 @@
 		38EB197522879EF300FB6C1D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38EB197322879EF300FB6C1D /* Main.storyboard */; };
 		38EB197722879EF500FB6C1D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38EB197622879EF500FB6C1D /* Assets.xcassets */; };
 		38EB197A22879EF500FB6C1D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38EB197822879EF500FB6C1D /* LaunchScreen.storyboard */; };
+		3E02956D22ADE5A4008FA5B2 /* Comentario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E02956C22ADE5A4008FA5B2 /* Comentario.swift */; };
 		3EAEABAF22A744BA007697E2 /* Parques.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAEABAE22A744BA007697E2 /* Parques.swift */; };
 		C211AF8C22A857F1004E33CA /* DetailParque.swift in Sources */ = {isa = PBXBuildFile; fileRef = C211AF8B22A857F1004E33CA /* DetailParque.swift */; };
 		C211AF8E22AA81BA004E33CA /* Parque.swift in Sources */ = {isa = PBXBuildFile; fileRef = C211AF8D22AA81BA004E33CA /* Parque.swift */; };
@@ -31,6 +32,7 @@
 		38EB197622879EF500FB6C1D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		38EB197922879EF500FB6C1D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		38EB197B22879EF500FB6C1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3E02956C22ADE5A4008FA5B2 /* Comentario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comentario.swift; sourceTree = "<group>"; };
 		3EAEABAE22A744BA007697E2 /* Parques.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parques.swift; sourceTree = "<group>"; };
 		722A9CD462930F49C4238F0C /* Pods_HelpMeParkIOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HelpMeParkIOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		877B372C386F75B965BCB6DB /* Pods-HelpMeParkIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelpMeParkIOS.debug.xcconfig"; path = "Target Support Files/Pods-HelpMeParkIOS/Pods-HelpMeParkIOS.debug.xcconfig"; sourceTree = "<group>"; };
@@ -77,7 +79,6 @@
 		38EB196E22879EF300FB6C1D /* HelpMeParkIOS */ = {
 			isa = PBXGroup;
 			children = (
-				C211AF8F22AA8403004E33CA /* New Group */,
 				38EB196F22879EF300FB6C1D /* AppDelegate.swift */,
 				C211AF9222AAA588004E33CA /* ParqueViewCell.swift */,
 				38EB197122879EF300FB6C1D /* ViewController.swift */,
@@ -93,6 +94,7 @@
 				3EAEABAE22A744BA007697E2 /* Parques.swift */,
 				C211AF8B22A857F1004E33CA /* DetailParque.swift */,
 				C211AF8D22AA81BA004E33CA /* Parque.swift */,
+				3E02956C22ADE5A4008FA5B2 /* Comentario.swift */,
 			);
 			path = HelpMeParkIOS;
 			sourceTree = "<group>";
@@ -103,13 +105,6 @@
 				722A9CD462930F49C4238F0C /* Pods_HelpMeParkIOS.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		C211AF8F22AA8403004E33CA /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "New Group";
 			sourceTree = "<group>";
 		};
 		D140E6A9043E81286F382AE7 /* Pods */ = {
@@ -254,6 +249,7 @@
 				C211AF9322AAA588004E33CA /* ParqueViewCell.swift in Sources */,
 				C2A4948A229014E7009735D6 /* RegistarViewController.swift in Sources */,
 				38EB197222879EF300FB6C1D /* ViewController.swift in Sources */,
+				3E02956D22ADE5A4008FA5B2 /* Comentario.swift in Sources */,
 				38EB197022879EF300FB6C1D /* AppDelegate.swift in Sources */,
 				C2D1B60022A188E900F7F50F /* MapViewController.swift in Sources */,
 				C211AF8E22AA81BA004E33CA /* Parque.swift in Sources */,

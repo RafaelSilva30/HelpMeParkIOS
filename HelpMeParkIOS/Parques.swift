@@ -50,8 +50,6 @@ class Parques: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         
         cell.lblName.text = self.parquesList[indexPath.row].nomeParque
-        cell.distancia.text = self.parquesList[indexPath.row].nrLugares + " lugares"
-       
         
       
         
@@ -135,11 +133,10 @@ class Parques: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 print(snapshot)
                 
                 let nome = (snapshot.value as? NSDictionary)!["nome"] as! String
-                		let lugares = (snapshot.value as? NSDictionary)!["lugares"] as! String
             
                 print(nome)
                 
-            self.parquesList.append(Parque(nome: nome,lugares: lugares))
+            self.parquesList.append(Parque(nome: nome))
                 
                 self.tableView.reloadData()
                 
