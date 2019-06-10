@@ -53,8 +53,12 @@ class DetailParque: UIViewController {
             let PrecoBaseFds = (snapshot.value as? NSDictionary)!["PreçoBaseFimdeSemana"] as! String
             let Preco15MinutosFds = (snapshot.value as? NSDictionary)!["Preço15MinutosFimdeSemana"] as! String
             
+<<<<<<< HEAD
+            if(parque == nomeParque){
+=======
             if( parque == nomeParque){
                 
+>>>>>>> master
                 self.lblName.text = parque	
                 
                 self.PrecoBaseSemanaLbl.text  = PrecoBaseSemana + "€"
@@ -82,6 +86,7 @@ class DetailParque: UIViewController {
         {
            let comentario = (segue.destination as! Comentario)
             comentario.parque = lblName.text!
+            comentario.ParqueList = parquesList
         }
     }
     
