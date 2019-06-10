@@ -355,13 +355,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oA8-rj-od2">
-                                                    <rect key="frame" x="130" y="30" width="42" height="20.5"/>
+                                                    <rect key="frame" x="46" y="30" width="42" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoti" translatesAutoresizingMaskIntoConstraints="NO" id="hlV-Nx-JM5">
-                                                    <rect key="frame" x="20" y="10" width="100" height="23.5"/>
+                                                    <rect key="frame" x="20" y="10" width="16" height="23.5"/>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
@@ -864,7 +864,6 @@
                                                             <userDefinedRuntimeAttribute type="number" keyPath="rating">
                                                                 <real key="value" value="0.0"/>
                                                             </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="text" value="Parque Vazio"/>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="totalStars">
                                                                 <integer key="value" value="5"/>
                                                             </userDefinedRuntimeAttribute>
@@ -895,13 +894,6 @@
                                                 <rect key="frame" x="32" y="381" width="350" height="253"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Adicionar Comentário" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XFq-2f-Eh9">
-                                                        <rect key="frame" x="8" y="29" width="334" height="30"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Observações:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tCE-CW-by3">
                                                         <rect key="frame" x="11" y="133" width="322" height="21"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -910,7 +902,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AVN-fF-88O" customClass="CosmosView" customModule="Cosmos">
-                                                        <rect key="frame" x="80" y="86" width="140" height="39"/>
+                                                        <rect key="frame" x="95" y="67" width="140" height="39"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <color key="backgroundColor" white="1" alpha="0.52792143485915488" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <accessibility key="accessibilityConfiguration">
@@ -920,7 +912,6 @@
                                                             <userDefinedRuntimeAttribute type="number" keyPath="rating">
                                                                 <real key="value" value="0.0"/>
                                                             </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="text" value="Parque Vazio"/>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="totalStars">
                                                                 <integer key="value" value="5"/>
                                                             </userDefinedRuntimeAttribute>
@@ -944,6 +935,20 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TE7-j3-wh6">
+                                                        <rect key="frame" x="18" y="109" width="302" height="21"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" red="0.79031389949999997" green="0.19159111379999999" blue="0.25486505030000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Adicionar Comentário" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XFq-2f-Eh9">
+                                                        <rect key="frame" x="5" y="8" width="334" height="30"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.33333333333333331" alpha="0.52792143485915488" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <userDefinedRuntimeAttributes>
@@ -1014,6 +1019,7 @@
                         <outlet property="dataAtual" destination="w9j-Gq-8vs" id="aJZ-h5-1A8"/>
                         <outlet property="dataComent" destination="hLC-jY-WIH" id="0lg-za-fgf"/>
                         <outlet property="dispComent" destination="gBn-Rv-LvN" id="ZYB-YT-uI8"/>
+                        <outlet property="lblRatingBar" destination="TE7-j3-wh6" id="Eye-8w-bfJ"/>
                         <outlet property="nomeUserAtual" destination="HhN-g6-3bI" id="kVY-mg-rJA"/>
                         <outlet property="nomeUserComent" destination="67t-2g-0Hc" id="f8r-LQ-Eoy"/>
                         <outlet property="obsComent" destination="mmr-sb-N16" id="Ekg-mC-ibs"/>
@@ -1023,7 +1029,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hrY-x2-Tl2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4417" y="2900"/>
+            <point key="canvasLocation" x="-4417.391304347826" y="2899.5535714285711"/>
         </scene>
         <!--Mapa-->
         <scene sceneID="awL-3P-WGE">
