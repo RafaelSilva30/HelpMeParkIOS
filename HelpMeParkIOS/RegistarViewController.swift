@@ -46,7 +46,7 @@ class RegistarViewController: UIViewController,UITextFieldDelegate {
                 //Criar username com a conta
                 let uid = (Auth.auth().currentUser?.uid)!
                 let ref = Database.database().reference().child("Users").child(uid)
-                ref.setValue(["email": self.email.text!, "Username": self.username.text!, "CreationDate": String(describing: Date())])
+                ref.setValue(["email": self.email.text!, "Username": self.username.text!, "DataCriacao": String(describing: Date())])
                 //---------------
     
                 self.performSegue(withIdentifier:"registerToLogin", sender: self)

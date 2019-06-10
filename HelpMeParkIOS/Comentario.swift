@@ -15,7 +15,7 @@ import FirebaseAuth
 class Comentario: UIViewController {
 
     var ref: DatabaseReference!
-    
+    var nome : String = ""
     let reff = Database.database().reference()
     
      var dbHandle: DatabaseHandle?
@@ -48,7 +48,29 @@ class Comentario: UIViewController {
     
     @IBOutlet weak var lblRatingBar: UILabel!
     
+    @IBOutlet weak var nomeUserAtual: UILabel!
     override func viewDidLoad() {
+        
+        
+        let email = Auth.auth().currentUser?.email
+        let uid = Auth.auth().currentUser?.uid
+        
+        let teste =  reff.child("Users").child(uid!)
+        print("vivvaaa")
+        print(teste)
+        
+        dbHandle = teste.observe(.value,  with:{(snapshot) in
+            let nomeUser:String? = snapshot.childSnapshot(forPath:"Username").value as? String
+            let emailUser:String? = snapshot.childSnapshot(forPath:"email").value as? String
+            
+            print(emailUser)
+            print(email)
+            if emailUser == email {
+                print("ENTREI AQUI MPT")
+                self.nome = nomeUser!
+                print(self.nomeUserAtual.text)
+            }
+        })
         
         nomeParque.text = parque
         
@@ -136,13 +158,11 @@ class Comentario: UIViewController {
         
         
         getCurrentDateTime()
-        let teste = parque
+        let teste1 = parque
         print(parque)
     }
     
     
-    
-    @IBOutlet weak var nomeUserAtual: UILabel!
     
     func getCurrentDateTime(){
         let formatter = DateFormatter()
@@ -155,13 +175,9 @@ class Comentario: UIViewController {
     
     
     @IBAction func addComentario(_ sender: Any) {
-    let email = Auth.auth().currentUser?.email
-    self.nomeUserAtual.text = email
 
-   
-   
        
-        let data1 = ["disponibilidade":ratingBar.rating  ,"nomeUser": nomeUserAtual.text!, "text_Coment": coment_obs.text!, "data": dataAtual.text!] as [String : Any]
+        let data1 = ["disponibilidade":ratingBar.rating  ,"nomeUser": nome, "text_Coment": coment_obs.text!, "data": dataAtual.text!] as [String : Any]
         
         self.reff.child("Parques").child(parque).child("comentario").setValue(data1)
         }

@@ -37,6 +37,8 @@ class customPin: NSObject,MKAnnotation {
 class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     
     
+    
+    
     @IBOutlet weak var mapa: MKMapView!
     
     
@@ -55,14 +57,18 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     var coordenadas = CLLocationCoordinate2D()
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print(utilizador)
         
         let centerLocation = CLLocation(latitude: 12, longitude: 12)
         
         centerMapOnLocation(location: centerLocation)
         
-      
+       
         
        
         manager.delegate = self
