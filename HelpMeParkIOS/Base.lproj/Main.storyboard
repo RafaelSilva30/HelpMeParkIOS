@@ -154,13 +154,6 @@
                                                 <rect key="frame" x="0.0" y="-47" width="414" height="1191"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gJB-S6-yOA">
-                                                <rect key="frame" x="20" y="8" width="374" height="42"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="42"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KOL-n4-bbD">
                                                 <rect key="frame" x="20" y="98" width="374" height="327"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -194,16 +187,16 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C8Y-X4-ZaX">
-                                                        <rect key="frame" x="208" y="79" width="168" height="42"/>
+                                                        <rect key="frame" x="305" y="72" width="82" height="42"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rt4-Ig-s4t">
                                                         <rect key="frame" x="305" y="138" width="61" height="21"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -221,17 +214,10 @@
                                                         <color key="textColor" red="0.1855620952" green="0.23167720520000001" blue="0.79031389949999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="10J-1k-hkR">
-                                                        <rect key="frame" x="208" y="229" width="42" height="21"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dMa-tF-PO5">
                                                         <rect key="frame" x="305" y="276" width="61" height="21"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -242,8 +228,20 @@
                                                         <color key="textColor" red="0.1855620952" green="0.23167720520000001" blue="0.79031389949999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="10J-1k-hkR">
+                                                        <rect key="frame" x="305" y="221" width="37" height="19"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="0.5138859160958904" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="20"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UX7-ce-gEl">
                                                 <rect key="frame" x="20" y="464" width="374" height="327"/>
@@ -258,6 +256,11 @@
                                                     </label>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="0.51083583047945202" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="20"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pal-C4-aQ5">
                                                 <rect key="frame" x="30" y="857" width="354" height="45"/>
@@ -279,10 +282,19 @@
                                                     <segue destination="bKj-tc-8Ci" kind="show" identifier="ComentarioSegue" id="aWy-P6-3xH"/>
                                                 </connections>
                                             </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gJB-S6-yOA">
+                                                <rect key="frame" x="73" y="30" width="268" height="51.5"/>
+                                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="47"/>
+                                                <color key="textColor" red="0.1855620952" green="0.23167720520000001" blue="0.79031389949999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstItem="gJB-S6-yOA" firstAttribute="top" secondItem="X3f-Rs-pKT" secondAttribute="top" constant="30" id="5Ga-dF-nVJ"/>
+                                            <constraint firstItem="gJB-S6-yOA" firstAttribute="leading" secondItem="X3f-Rs-pKT" secondAttribute="leading" constant="73" id="TNR-wq-a7I"/>
                                             <constraint firstAttribute="height" constant="1000" id="jHK-fN-92W"/>
+                                            <constraint firstAttribute="trailing" secondItem="gJB-S6-yOA" secondAttribute="trailing" constant="73" id="tpH-U1-PCH"/>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1500" id="zXS-Tq-qBs"/>
                                         </constraints>
                                     </view>
@@ -316,7 +328,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U6s-8x-U9W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4417.391304347826" y="1180.5803571428571"/>
+            <point key="canvasLocation" x="-4681" y="1209"/>
         </scene>
         <!--Parques-->
         <scene sceneID="bB1-Vj-3lJ">
@@ -406,7 +418,7 @@
             </objects>
             <point key="canvasLocation" x="-3475.36231884058" y="1209.375"/>
         </scene>
-        <!--Mapa-->
+        <!--Map View Controller-->
         <scene sceneID="eA8-6D-Mk7">
             <objects>
                 <viewController id="2Yf-S2-T89" customClass="MapViewController" customModule="HelpMeParkIOS" customModuleProvider="target" sceneMemberID="viewController">
@@ -438,7 +450,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="ueA-dq-9CW"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Mapa" image="map" id="YB4-oc-hnP"/>
+                    <navigationItem key="navigationItem" id="V2t-EO-fVz"/>
                     <connections>
                         <outlet property="mapa" destination="CpF-px-oMf" id="nDz-M2-ube"/>
                         <segue destination="gzy-TB-NUa" kind="show" identifier="pinDetalhe" id="axL-ud-Acp"/>
@@ -446,7 +458,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mCQ-MR-Gl6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-265.21739130434787" y="496.875"/>
+            <point key="canvasLocation" x="644.92753623188412" y="496.875"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Pmp-ho-4WG">
@@ -458,7 +470,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="2Yf-S2-T89" kind="relationship" relationship="viewControllers" id="s95-QQ-arc"/>
+                        <segue destination="Xp9-WB-xbL" kind="relationship" relationship="viewControllers" id="s95-QQ-arc"/>
                         <segue destination="kYp-xw-UFL" kind="relationship" relationship="viewControllers" id="pLx-Fh-G79"/>
                         <segue destination="oaL-bN-Tfp" kind="relationship" relationship="viewControllers" id="ATL-j3-RKw"/>
                     </connections>
@@ -674,7 +686,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Z2d-vM-b5E">
-                                <rect key="frame" x="20" y="334" width="374" height="333"/>
+                                <rect key="frame" x="20" y="350" width="374" height="379"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Foh-lL-Rrx">
@@ -686,7 +698,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kK0-iG-0aI">
-                                        <rect key="frame" x="114" y="210" width="146" height="45"/>
+                                        <rect key="frame" x="19" y="251" width="337" height="49"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.1576845645904541" green="0.35063943266868591" blue="0.67061978578567505" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="30"/>
@@ -703,15 +715,8 @@
                                             <segue destination="BYZ-38-t0r" kind="show" identifier="registerToLogin" id="vsz-nZ-dhY"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Já tem conta ? " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GB4-GR-bzm">
-                                        <rect key="frame" x="25" y="282" width="197" height="26"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="57q-KS-x9h">
-                                        <rect key="frame" x="132" y="280" width="90" height="31"/>
+                                        <rect key="frame" x="202" y="312" width="90" height="31"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
                                         <state key="normal" title="Clique Aqui">
@@ -746,6 +751,13 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Já tem conta ? " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GB4-GR-bzm">
+                                        <rect key="frame" x="89" y="314" width="197" height="26"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <userDefinedRuntimeAttributes>
@@ -789,7 +801,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qnx-cA-QNB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3171" y="497"/>
+            <point key="canvasLocation" x="-3733" y="437"/>
         </scene>
         <!--Comentario-->
         <scene sceneID="9Mz-sc-V7v">
@@ -805,6 +817,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hrY-x2-Tl2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-4419" y="2124"/>
+        </scene>
+        <!--Mapa-->
+        <scene sceneID="awL-3P-WGE">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Xp9-WB-xbL" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Mapa" image="map" id="YB4-oc-hnP"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7yu-OO-knV">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="2Yf-S2-T89" kind="relationship" relationship="rootViewController" id="59j-Ac-obK"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s8c-QQ-i5W" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-265.21739130434787" y="496.875"/>
         </scene>
     </scenes>
     <resources>
