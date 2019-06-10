@@ -16,10 +16,6 @@ class Parques: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var parquesList = [Parque]()
     
     
-    struct parque1 {
-        
-        let nome: String
-    }
     
     
     var selectedLabel:String?
@@ -28,7 +24,7 @@ class Parques: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-      //  return postData.count
+      
         
         return parquesList.count
         
@@ -50,13 +46,20 @@ class Parques: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         
         cell.lblName.text = self.parquesList[indexPath.row].nomeParque
+
         
-      
+        //Label do Nome
+        cell.lblName.font = UIFont(name: "Arial-BoldMT", size:20);
+        cell.lblName.textColor = UIColor.white
+        cell.lblName.sizeToFit()
+        
+        //Label do Nr de Lugares
+
         
         cell.accessoryType = UITableViewCell.AccessoryType.detailDisclosureButton
-        cell.textLabel?.font = UIFont(name: "Arial-BoldMT", size:10);
+       
         cell.backgroundView = UIImageView(image: UIImage(named: "table"))
-        cell.textLabel?.textColor = UIColor.white
+       
         cell.tintColor = UIColor.white
  
      
@@ -73,7 +76,7 @@ class Parques: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
    func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
         
-        let alert = UIAlertController(title: "Informacoes", message: parquesList[indexPath.row].nomeParque, preferredStyle: UIAlertController.Style.alert)
+    let alert = UIAlertController(title: "Informacoes", message:"Nome: " + parquesList[indexPath.row].nomeParque, preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "Fechar", style: UIAlertAction.Style.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
@@ -98,6 +101,11 @@ class Parques: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
+
+    
   
     
     
@@ -114,7 +122,7 @@ class Parques: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var databaseHandle:DatabaseHandle?
     
-    var postData = [String]()
+   
     
         @IBOutlet weak var tableView: UITableView!
     
@@ -124,16 +132,20 @@ class Parques: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
         tableView.delegate = self
             
-    
+            //Tamanho da célula
+           
+            
         
   
-         ref.child("Parques").observe(.childAdded,    with: {
+            ref.child("Parques").observe(.childAdded,    with: {
                 snapshot in
                 
                 print(snapshot)
                 
-                let nome = (snapshot.value as? NSDictionary)!["nome"] as! String
+
             
+                let nome = (snapshot.value as? NSDictionary)!["nome"] as! String
+
                 print(nome)
                 
             self.parquesList.append(Parque(nome: nome))
