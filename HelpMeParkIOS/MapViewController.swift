@@ -57,6 +57,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     var coordenadas = CLLocationCoordinate2D()
     
+    var utilizador: String = ""
     
     
     override func viewDidLoad() {
