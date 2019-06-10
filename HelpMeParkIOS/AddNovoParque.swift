@@ -17,6 +17,7 @@ class AddNovoParque: UIViewController,UITextFieldDelegate  {
     @IBOutlet weak var preco15minfds: UITextField!
     
     
+    @IBOutlet weak var lugares: UITextField!
     
     @IBOutlet weak var nome: UITextField!
     
@@ -35,6 +36,8 @@ class AddNovoParque: UIViewController,UITextFieldDelegate  {
     
         super.viewDidLoad()
         
+        
+        
 
     }
     
@@ -42,7 +45,7 @@ class AddNovoParque: UIViewController,UITextFieldDelegate  {
     
     @IBAction func addParque(_ sender: Any) {
         
-        let data = ["nome": nome.text!,"Latitude": latitude.text!, "Longitude": longitude.text!,"PreçoBaseSemana":preçoBaseSemana.text!,"PreçoBaseFimdeSemana":precoBaseFds.text!,"Preço15MinutosSemana":preco15minSemana.text!,"Preço15MinutosFimdeSemana":preco15minfds.text!]
+        let data = ["nome": nome.text!,"lugares": lugares.text!, "Latitude": latitude.text!, "Longitude": longitude.text!,"PreçoBaseSemana":preçoBaseSemana.text!,"Preço15MinutosSemana":preco15minSemana.text!,"PreçoBaseFimdeSemana":precoBaseFds.text!,"Preço15MinutosFimdeSemana":preco15minfds.text!]
         
         self.reff.child("Parques").child(nome.text!).setValue(data)
         
