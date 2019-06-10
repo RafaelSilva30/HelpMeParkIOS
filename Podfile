@@ -13,6 +13,8 @@ pod 'Firebase/Auth'
 pod 'Firebase/Database'
 pod 'GeoFire', '>= 1.1'
 pod 'Firebase'
+pod 'Cosmos', '~> 19.0'
+		
 
 
 
