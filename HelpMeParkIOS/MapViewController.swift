@@ -46,7 +46,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             let annotation = MKPointAnnotation()
             annotation.coordinate = CLLocationCoordinate2D(latitude: (Double(latitude!))!, longitude: (Double(longitude!))!)
             
-            annotation.title = (snapshot.value as AnyObject?)!["Latitude"] as! String?
+            annotation.title = (snapshot.value as AnyObject?)!["nome"] as! String?
             	
             self.mapa.addAnnotation(annotation)
         })
