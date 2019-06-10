@@ -135,7 +135,7 @@ class Parques: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 print(snapshot)
                 
                 let nomeParque = (snapshot.value as? NSDictionary)!["nome"] as! String
-            let lugares = (snapshot.value as? NSDictionary)!["lugares"] as! String
+                let lugares = (snapshot.value as? NSDictionary)!["lugares"] as! String
             
                 print(nomeParque)
                 
