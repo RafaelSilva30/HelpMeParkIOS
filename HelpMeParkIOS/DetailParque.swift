@@ -10,6 +10,8 @@ import Foundation
 import FirebaseDatabase
 import UIKit
 
+
+
 class DetailParque: UIViewController {
     
     @IBOutlet weak var lblName: UILabel!
@@ -26,15 +28,17 @@ class DetailParque: UIViewController {
     let ref = Database.database().reference()
     
     var databaseHandle:DatabaseHandle?
-
     
+    
+    var ann:customPin!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
 
+        
         let parque = parquesList
         print(parque)
+        
         
         
         ref.child("Parques").observe(.childAdded,    with: {

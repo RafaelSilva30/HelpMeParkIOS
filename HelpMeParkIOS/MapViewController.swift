@@ -20,13 +20,16 @@ class customPin: NSObject,MKAnnotation {
     var coordinate: CLLocationCoordinate2D
     var title: String?
     var subtitle: String?
+    
     init(pinTitle: String, location:CLLocationCoordinate2D, pinSub: String){
         self.coordinate = location
         self.title = pinTitle
         self.subtitle = pinSub
         
     }
+    
 }
+ 
 
 class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     
@@ -37,6 +40,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     let ref = Database.database().reference()
     
+    
+    var nomeP: String = ""
     
     
     
@@ -60,7 +65,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             let latitude = (snapshot.value as AnyObject?)!["Latitude"] as! String?
             let longitude = (snapshot.value as AnyObject?)!["Longitude"] as! String?
             
-            let point = MKPointAnnotation()
             
           
             let titulo  =  (snapshot.value as AnyObject?)!["nome"] as! String?
@@ -70,7 +74,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             
             let coordenadas = CLLocationCoordinate2D(latitude: (Double(latitude!))!, longitude: (Double(longitude!))!)
             
-            let pin = customPin(pinTitle:"Nome: " + titulo!, location: coordenadas, pinSub: "Numero de Lugares: " + subtitulo!)
+            let pin = customPin(pinTitle:titulo!, location: coordenadas, pinSub: "Numero de Lugares: " + subtitulo!)
             
             self.mapa.delegate = self
             
@@ -85,8 +89,11 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     
     
+    
+    
+    
    
-        
+    
     
     
     
@@ -121,11 +128,31 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     }
     
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        let anno = view.annotation as! customPin
+        print(anno.title)
+        // then access the properties of anno and use them for the segue
         
-        //SEGUE
+        nomeP = anno.title!
+        print(nomeP)
+        self.performSegue(withIdentifier:"pinDetalhe",sender: anno)
+        
     }
     
- 
+   
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "pinDetalhe" {
+            
+            let des = segue.destination as! DetailParque
+            des.parquesList = nomeP
+            print(des.ann)
+        }
+    }
+
+    
+    
+    
+   
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         
@@ -151,5 +178,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     
     
+    
 }
+
 
