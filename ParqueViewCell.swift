@@ -22,6 +22,7 @@ class ParqueViewCell: UITableViewCell {
   
     @IBOutlet weak var lblName: UILabel!
     
-    @IBOutlet weak var distancia: UILabel!
+    @IBOutlet weak var lblDistancia: UILabel!
+    
     
 }

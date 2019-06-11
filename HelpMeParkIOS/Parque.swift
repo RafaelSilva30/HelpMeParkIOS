@@ -8,15 +8,18 @@
 
 import Foundation
 import  UIKit
+import MapKit
 
-class Parque: NSObject {
+class Parque: NSObject{
     
     var nomeParque: String = ""
+   
 
     
     init(nome: String) {
         
         self.nomeParque = nome
+        
 
         
     }

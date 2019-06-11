@@ -17,11 +17,19 @@ class Parques: UIViewController, UITableViewDelegate, UITableViewDataSource {
   
     var parquesList = [Parque]()
     
-    var coordenadas = [CLLocationCoordinate2D]()
+    var coordenadas = [CLLocation]()
     
-    var currentLoc = CLLocationCoordinate2D()
+    var currentLoc = CLLocation()
+    
+    var distancias: [Float] = []
     
     var selectedLabel:String?
+    
+    var doubleToString: String = ""
+    
+    var closestLocation: CLLocation?
+    
+    var smallestDistance: CLLocationDistance?
     
     
     var dbHandle: DatabaseHandle?
@@ -45,15 +53,13 @@ class Parques: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
       
         
-     
-        
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ParqueViewCell
         
         
         
         cell.lblName.text = self.parquesList[indexPath.row].nomeParque
-
+        
+       // cell.lblDistancia.text! = self.distancias[indexPath.row]
         
         //Label do Nome
         cell.lblName.font = UIFont(name: "Arial-BoldMT", size:30);
@@ -164,9 +170,9 @@ class Parques: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 let latitude = Double(auxLat)
                 let longitude = Double(auxLong)
                 
-            self.parquesList.append(Parque(nome: nome))
+                self.parquesList.append(Parque(nome: nome))
                 
-                self.coordenadas.append(CLLocationCoordinate2D(latitude: Double(auxLat) as! CLLocationDegrees, longitude: Double(auxLong) as! CLLocationDegrees))
+                self.coordenadas.append(CLLocation(latitude: Double(auxLat) as! CLLocationDegrees, longitude: Double(auxLong) as! CLLocationDegrees))
                 
                 self.tableView.reloadData()
                 
@@ -180,26 +186,61 @@ class Parques: UIViewController, UITableViewDelegate, UITableViewDataSource {
             })
         
         let uid = (Auth.auth().currentUser?.uid)!
-         dbHandle = ref.child("Users").child(uid).child("latestLoc").observe(.childAdded,    with: {
-            snapshot in
-            
-            print(snapshot)
-            
-            let currLat = (snapshot.value as? NSDictionary)!["latitude"] as! String
+       
+        dbHandle = ref.child("Users").child(uid).child("latestLoc").observe(.value, with: {
+            (snapshot) in
             
             
-            
-            let currLong = (snapshot.value as? NSDictionary)!["longitude"] as! String
+            let currentLat = snapshot.childSnapshot(forPath:"latitude").value as? String
+           
+            let currentLng = snapshot.childSnapshot(forPath:"longitude").value as? String
             
             
             
-            self.currentLoc = CLLocationCoordinate2D(latitude: Double(currLat) as! CLLocationDegrees, longitude: Double(currLong) as! CLLocationDegrees)
-            print("aaaaaaaaaaaaaaaaaaaa")
-            print(self.currentLoc)
+            self.currentLoc = CLLocation(latitude: Double(currentLat!) as! CLLocationDegrees, longitude: Double(currentLng!) as! CLLocationDegrees)
+            
+            
+            
+            
+            for location in self.coordenadas {
+                print("Locations")
+                print(location)
+                
+                let distance = self.currentLoc.distance(from: location)
+                print("Distancias")
+                
+                self.distancias.append(Float(distance)
+                
+               
+                print("AAAAA")
+             
+                
+                
+                
+                if self.smallestDistance == nil || distance < (self.smallestDistance)! {
+                    
+                    self.closestLocation = location
+                    self.smallestDistance = distance
+                    
+                    
+                    
+                }
+            }
+            print("closestLocation: \(self.closestLocation), distance: \(self.smallestDistance)")
+          
+            
+            
+            
+           
+            
         })
        
         
+    
     }
+    
+    
+    
     
 }
 

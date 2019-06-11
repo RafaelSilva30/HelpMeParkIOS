@@ -13,7 +13,6 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="viewController" id="BYZ-38-t0r" customClass="ViewController" customModule="HelpMeParkIOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="txF-aa-iCi">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -134,6 +133,7 @@
                         <segue destination="PIc-gp-kkH" kind="show" identifier="adminSegue" id="zJJ-LM-Faz"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2333.3333333333335" y="-357.58928571428572"/>
         </scene>
@@ -418,8 +418,9 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zPU-5w-CsM">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zPU-5w-CsM">
                                 <rect key="frame" x="0.0" y="148" width="414" height="645"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -430,8 +431,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oA8-rj-od2">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oA8-rj-od2">
                                                     <rect key="frame" x="130" y="30" width="42" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -439,17 +441,22 @@
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoti" translatesAutoresizingMaskIntoConstraints="NO" id="hlV-Nx-JM5">
                                                     <rect key="frame" x="20" y="10" width="100" height="23.5"/>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lje-bj-aAz">
+                                                    <rect key="frame" x="298" y="12" width="42" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="oA8-rj-od2" firstAttribute="leading" secondItem="hlV-Nx-JM5" secondAttribute="trailing" constant="200" id="3tz-sB-XDn"/>
                                                 <constraint firstItem="hlV-Nx-JM5" firstAttribute="top" secondItem="bAF-w3-oEA" secondAttribute="top" constant="10" id="BOW-zL-grJ"/>
-                                                <constraint firstItem="oA8-rj-od2" firstAttribute="top" secondItem="bAF-w3-oEA" secondAttribute="top" constant="30" id="Hex-zf-Z6b"/>
                                                 <constraint firstAttribute="bottom" secondItem="hlV-Nx-JM5" secondAttribute="bottom" constant="10" id="P1C-3a-nEc"/>
                                                 <constraint firstItem="hlV-Nx-JM5" firstAttribute="leading" secondItem="bAF-w3-oEA" secondAttribute="leading" constant="20" id="fay-25-Ak1"/>
-                                                <constraint firstItem="oA8-rj-od2" firstAttribute="leading" secondItem="hlV-Nx-JM5" secondAttribute="trailing" constant="10" id="kGP-Yo-wQ2"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="lblDistancia" destination="Lje-bj-aAz" id="Jg5-Ia-v5V"/>
                                             <outlet property="lblName" destination="oA8-rj-od2" id="a4G-69-C49"/>
                                         </connections>
                                     </tableViewCell>
@@ -465,7 +472,7 @@
                                 </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lista de Parques" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ig-9z-uAr">
-                                <rect key="frame" x="108" y="98" width="197" height="40"/>
+                                <rect key="frame" x="108" y="98" width="197" height="33"/>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="30"/>
                                 <color key="textColor" red="0.79031389949999997" green="0.19159111379999999" blue="0.25486505030000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
@@ -474,13 +481,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="1ig-9z-uAr" firstAttribute="leading" secondItem="sc0-WR-isi" secondAttribute="leading" constant="108" id="8Ql-5R-uIs"/>
-                            <constraint firstItem="sc0-WR-isi" firstAttribute="trailing" secondItem="zPU-5w-CsM" secondAttribute="trailing" id="9Sj-Fy-pBf"/>
-                            <constraint firstItem="sc0-WR-isi" firstAttribute="bottom" secondItem="zPU-5w-CsM" secondAttribute="bottom" id="CTV-rx-xob"/>
-                            <constraint firstItem="zPU-5w-CsM" firstAttribute="top" secondItem="sc0-WR-isi" secondAttribute="top" constant="60" id="G6m-Pt-4YP"/>
-                            <constraint firstItem="sc0-WR-isi" firstAttribute="bottom" secondItem="zPU-5w-CsM" secondAttribute="bottom" constant="20" id="M5G-mi-drN"/>
                             <constraint firstItem="1ig-9z-uAr" firstAttribute="top" secondItem="sc0-WR-isi" secondAttribute="top" constant="10" id="WlL-ee-ZfS"/>
-                            <constraint firstItem="zPU-5w-CsM" firstAttribute="top" secondItem="1ig-9z-uAr" secondAttribute="bottom" constant="10" id="Y8m-y8-zhz"/>
-                            <constraint firstItem="zPU-5w-CsM" firstAttribute="leading" secondItem="sc0-WR-isi" secondAttribute="leading" id="dZj-qR-pHE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="sc0-WR-isi"/>
                     </view>
@@ -510,10 +511,6 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </mapView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logoti" translatesAutoresizingMaskIntoConstraints="NO" id="9Ps-AS-0mC">
-                                <rect key="frame" x="124" y="44" width="166" height="69"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E2g-G2-m1z">
                                 <rect key="frame" x="350" y="92" width="42" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1175,7 +1172,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="4LX-fm-1uw"/>
-        <segue reference="axL-ud-Acp"/>
+        <segue reference="N5G-BU-R2b"/>
         <segue reference="Gaf-Cg-hm7"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -29,6 +29,7 @@ class DetailParque: UIViewController {
     
     @IBOutlet weak var PrecoBaseFdsLbl: UILabel!
     @IBOutlet weak var Preco15MinutosFdsLbl: UILabel!
+    
     var parquesList: String = ""
     
     
