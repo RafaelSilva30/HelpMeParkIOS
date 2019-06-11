@@ -53,6 +53,7 @@ class ViewController: UIViewController, UITextViewDelegate {
             let destinationNv = barViewControllers.viewControllers?[0] as! UINavigationController
             let destinationViewController = destinationNv.viewControllers[0] as! MapViewController
             destinationViewController.utilizador = autenticado
+            
         }
 
         

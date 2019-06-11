@@ -69,7 +69,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         
         centerMapOnLocation(location: centerLocation)
         
-       
+       verificacaoTabBar()
         
        
         manager.delegate = self
@@ -211,6 +211,20 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         
        return annotationView
         
+    }
+    
+    //Verificação da TabBar
+    func verificacaoTabBar(){
+        if(utilizador == "convidado" || utilizador == "user"){
+            if let tabBarController = self.tabBarController {
+                let indexToRemove = 2
+                if indexToRemove < tabBarController.viewControllers!.count {
+                    var viewControllers = tabBarController.viewControllers
+                    viewControllers?.remove(at: indexToRemove)
+                    tabBarController.viewControllers = viewControllers
+                }
+            }
+        }
     }
     
     
