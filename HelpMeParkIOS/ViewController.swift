@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 import FirebaseAuth
 
+
 class ViewController: UIViewController, UITextViewDelegate {
 
     
@@ -25,7 +26,11 @@ class ViewController: UIViewController, UITextViewDelegate {
         email.text! = "a@gmail.com"
         password.text! = "123456"
         
+        self.dismiss(animated: false, completion: nil)
         
+        
+       
+
     }
     
     

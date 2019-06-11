@@ -179,7 +179,7 @@ class Parques: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 
             })
         
-      /*  let uid = (Auth.auth().currentUser?.uid)!
+        let uid = (Auth.auth().currentUser?.uid)!
          dbHandle = ref.child("Users").child(uid).child("latestLoc").observe(.childAdded,    with: {
             snapshot in
             
@@ -198,7 +198,7 @@ class Parques: UIViewController, UITableViewDelegate, UITableViewDataSource {
             print(self.currentLoc)
         })
        
-        */
+        
     }
     
 }

@@ -49,6 +49,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     let manager = CLLocationManager()
     
+    
+    
     let ref = Database.database().reference()
     
     let reff = Database.database().reference()
@@ -59,17 +61,20 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     var utilizador: String = ""
     
+    var mapaPin: String = ""
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+       
         
         print(utilizador)
         
         let centerLocation = CLLocation(latitude: 12, longitude: 12)
         
-        centerMapOnLocation(location: centerLocation)
         
-       verificacaoTabBar()
+        
+        verificacaoTabBar()
         
        
         manager.delegate = self
@@ -93,9 +98,15 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             
             let pin = customPin(pinTitle:titulo!, location: coordenadas, pinSub: "Numero de Lugares: " + subtitulo!)
             
+            
+            
             self.mapa.delegate = self
             
             self.mapa.addAnnotation(pin);
+            
+            
+            
+            self.centerMapOnLocation(location: centerLocation)
             
             
         })
@@ -110,10 +121,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     
     
-    
-    
-    
    
+    
+    
     
     
     
@@ -121,7 +131,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     func centerMapOnLocation(location: CLLocation){
         let regionRadius: CLLocationDistance = 7000000
         let coordinateRegion = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
-    
+        
         mapa.setRegion(coordinateRegion, animated: true)
     }
     
@@ -130,50 +140,29 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     @IBAction func receberLocalizacao(_ sender: Any) {
         manager.startUpdatingLocation()
+        
        
     }
     
     
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let location = locations[0]
-        let span:MKCoordinateSpan = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
-        let myLocation:CLLocationCoordinate2D = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude)
-        self.coordenadas = myLocation
-        
-        print(coordenadas)
-        let region:MKCoordinateRegion = MKCoordinateRegion(center: myLocation, span: span)
-     
-        mapa.setRegion(region, animated: true)
-        
-        let uid = (Auth.auth().currentUser?.uid)!
-        let ref = Database.database().reference().child("Users").child(uid)
-        
-        
-         self.auxLat.text = String(format:"%.4f", self.coordenadas.latitude)
-        
-        self.auxLong.text = String(format:"%.4f", self.coordenadas.longitude)
-        
-        let data1 = ["latitude": auxLat.text, "longitude": auxLong.text]
-        self.reff.child("Users").child(uid).child("latestLoc").setValue(data1)
-        
-        
-        manager.stopUpdatingLocation()
-        
-       
-        
-       
-      
-    }
+    
+ 
     
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
-        let anno = view.annotation as! customPin
-        print(anno.title)
-        // then access the properties of anno and use them for the segue
+       
+            let anno = view.annotation as! customPin
+            print(anno.title)
+            // then access the properties of anno and use them for the segue
+            
+            nomeP = anno.title!
+            print(nomeP)
+            self.performSegue(withIdentifier:"pinDetalhe",sender: anno)
         
-        nomeP = anno.title!
-        print(nomeP)
-        self.performSegue(withIdentifier:"pinDetalhe",sender: anno)
+       
         
+        
+        
+       
     }
     
    
@@ -186,6 +175,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             
             
         }
+    
     }
 
     
@@ -194,23 +184,80 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
    
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        
-       
-        let reuseIdentifier = "pin"
-        
-        
+        print(self.mapaPin)
+        if(self.mapaPin == "True"){
+            
+            let reuseIdentifier = "pin"
+            
+            print(mapaPin)
+            let annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: reuseIdentifier)
+            
+            annotationView.image = UIImage(named: "blueDott")
+            annotationView.canShowCallout = true
+            
+           
+            
+            
+             return annotationView
+            
+            
+        }else{
+            
+            self.mapaPin = "False"
+            let reuseIdentifier = "pin"
+            
+            
             let annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: reuseIdentifier)
             
             annotationView.image = UIImage(named: "mapMarker")
             annotationView.canShowCallout = true
             
-       let button = UIButton(type: .detailDisclosure) as UIButton
-        
-        annotationView.rightCalloutAccessoryView = button
-        
-        
-       return annotationView
-        
+            let button = UIButton(type: .detailDisclosure) as UIButton
+            
+            annotationView.rightCalloutAccessoryView = button
+            
+            return annotationView
+            
+        }
+       
+       
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let location = locations.last{
+            let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+            
+          
+            
+            let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 100, longitudeDelta: 100))
+            self.mapa.setRegion(region, animated: true)
+            
+            self.coordenadas = center
+            
+            print(coordenadas)
+            
+            
+            
+            let uid = (Auth.auth().currentUser?.uid)!
+            
+            let ref = Database.database().reference().child("Users").child(uid)
+            
+            self.auxLat.text = String(format:"%.7f", self.coordenadas.latitude)
+            
+            self.auxLong.text = String(format:"%.7f", self.coordenadas.longitude)
+            
+            let data1 = ["latitude": auxLat.text, "longitude": auxLong.text]
+            self.reff.child("Users").child(uid).child("latestLoc").setValue(data1)
+            
+            self.mapa.showsUserLocation = true
+            
+           
+            
+            self.mapaPin = "True"
+            
+            
+            print(self.mapaPin)
+        }
     }
     
     //Verificação da TabBar
@@ -227,6 +274,24 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         }
     }
     
+  
+    
+    @IBAction func logoutButton(_ sender: Any) {
+        
+        do {
+            try Auth.auth().signOut()
+            
+            //  Present the login controller
+            let messageVC = self.storyboard?.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+            let MynavController = UINavigationController(rootViewController: messageVC)
+            self.present(MynavController, animated: true, completion: nil)
+            
+        } catch let signOutErr {
+            print("Failed to sign out:", signOutErr)
+        }
+    
+    
+    }
     
     
     
