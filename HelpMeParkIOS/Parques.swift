@@ -23,6 +23,7 @@ class Parques: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var distancias: [Float] = []
     
+    
     var selectedLabel:String?
     
     var doubleToString: String = ""
@@ -54,12 +55,11 @@ class Parques: UIViewController, UITableViewDelegate, UITableViewDataSource {
       
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ParqueViewCell
+      
+    
+        cell.lblName.text! = parquesList[indexPath.row].nomeParque
         
-        
-        
-        cell.lblName.text = self.parquesList[indexPath.row].nomeParque
-        
-        
+            
         //Label do Nome
         cell.lblName.font = UIFont(name: "Arial-BoldMT", size:30);
         cell.lblName.textColor = UIColor.white
@@ -75,13 +75,13 @@ class Parques: UIViewController, UITableViewDelegate, UITableViewDataSource {
  
      
        
-        
-        
     
-        
         return cell
         
     }
+    
+    
+    
  
     
     
@@ -138,7 +138,7 @@ class Parques: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
         tableView.delegate = self
             
-     
+
             tableView.backgroundView = UIImageView(image: UIImage(named: "table"))
     
             ref.child("Parques").observe(.childAdded,    with: {
@@ -159,17 +159,11 @@ class Parques: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 
                 self.coordenadas.append(CLLocation(latitude: Double(auxLat) as! CLLocationDegrees, longitude: Double(auxLong) as! CLLocationDegrees))
                 
-                self.tableView.reloadData()
-                
-                print(self.parquesList)
-
-               
-                print("kajsdkjasdkjasdnas")
-                
-                print(self.coordenadas)
+    
                 
             })
-        
+    
+      
         let uid = (Auth.auth().currentUser?.uid)!
        
         dbHandle = ref.child("Users").child(uid).child("latestLoc").observe(.value, with: {
@@ -186,26 +180,35 @@ class Parques: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 print("Locations")
                 print(location)
                 
-                let distance = self.currentLoc.distance(from: location)
+                
+                
+                let distance = (self.currentLoc.distance(from: location))
+                
+                
                 print("Distancias")
                 
 
                 self.distancias.append(Float((distance) / 1000))
                 
-                if self.smallestDistance == nil || distance < (self.smallestDistance)! {
-                    
-                    self.closestLocation = location
-                    self.smallestDistance = distance
-
-                }
+                
+                
+              self.distancias.sort() { $0.distance(to: Float(distance)) > $1.distance(to: Float(distance))}
+               
+               
+                self.tableView.reloadData()
+                
+               
             }
-            print("closestLocation: \(self.closestLocation), distance: \(self.smallestDistance)")
           
         })
-
+        
+        
     }
+ 
+ 
 
 }
+
 
 
     

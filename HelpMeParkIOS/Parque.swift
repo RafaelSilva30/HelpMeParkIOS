@@ -14,14 +14,14 @@ class Parque: NSObject{
     
     var nomeParque: String = ""
    
-
+   
     
     init(nome: String) {
         
         self.nomeParque = nome
-        
-
-        
+      
+      
+    
     }
 }
 
