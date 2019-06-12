@@ -28,6 +28,7 @@ class AddNovoParque: UIViewController,UITextFieldDelegate  {
     var ref: DatabaseReference!
 
     let reff = Database.database().reference()
+    var disp : Double = 0.0
     
    
     
@@ -47,11 +48,14 @@ class AddNovoParque: UIViewController,UITextFieldDelegate  {
         
         let data = ["nome": nome.text!,"lugares": lugares.text!, "Latitude": latitude.text!, "Longitude": longitude.text!,"PreçoBaseSemana":preçoBaseSemana.text!,"Preço15MinutosSemana":preco15minSemana.text!,"PreçoBaseFimdeSemana":precoBaseFds.text!,"Preço15MinutosFimdeSemana":preco15minfds.text!]
         
+        let data2 = ["data": "","disponibilidade" : disp, "nomeUser": "", "text_Coment": "Ainda sem comentário."] as [String : Any]
+        
+        
         self.reff.child("Parques").child(nome.text!).setValue(data)
         
+            self.reff.child("Parques").child(nome.text!).child("comentario").setValue(data2)
         
-
-    
+        
     
     }
         

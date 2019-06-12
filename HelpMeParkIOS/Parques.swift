@@ -209,10 +209,9 @@ class Parques: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 let distance = self.currentLoc.distance(from: location)
                 print("Distancias")
                 
-                self.distancias.append(Float(distance)
+                self.distancias.append(Float(distance))
                 
-               
-                print("AAAAA")
+            
              
                 
                 
