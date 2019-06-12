@@ -441,13 +441,6 @@
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoti" translatesAutoresizingMaskIntoConstraints="NO" id="hlV-Nx-JM5">
                                                     <rect key="frame" x="20" y="10" width="100" height="23.5"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lje-bj-aAz">
-                                                    <rect key="frame" x="298" y="12" width="42" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="hlV-Nx-JM5" firstAttribute="top" secondItem="bAF-w3-oEA" secondAttribute="top" constant="10" id="BOW-zL-grJ"/>
@@ -456,7 +449,6 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="lblDistancia" destination="Lje-bj-aAz" id="Jg5-Ia-v5V"/>
                                             <outlet property="lblName" destination="oA8-rj-od2" id="a4G-69-C49"/>
                                         </connections>
                                     </tableViewCell>
