@@ -172,9 +172,11 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             
             let des = segue.destination as! DetailParque
             des.parquesList = nomeP
-            
+            des.utilizador = utilizador
             
         }
+        
+    
     
     }
 

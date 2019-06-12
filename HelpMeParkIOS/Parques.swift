@@ -24,7 +24,7 @@ class Parques: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var distancias: [Float] = []
     
     var selectedLabel:String?
-    
+    var utilizador: String = ""
     var doubleToString: String = ""
     
     var closestLocation: CLLocation?
@@ -135,6 +135,8 @@ class Parques: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var tableView: UITableView!
 
     override func viewDidLoad() {
+        
+        print(utilizador)
 
         tableView.delegate = self
             

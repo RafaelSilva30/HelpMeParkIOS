@@ -31,7 +31,7 @@ class DetailParque: UIViewController {
     @IBOutlet weak var Preco15MinutosFdsLbl: UILabel!
     
     var parquesList: String = ""
-    
+    var utilizador: String = ""
     
     
     @IBOutlet weak var levelParque: UILabel!
@@ -42,18 +42,23 @@ class DetailParque: UIViewController {
     var databaseHandle:DatabaseHandle?
     
     
+    @IBOutlet weak var comentarioView: UIView!
     var ann:customPin!
     
+    @IBOutlet weak var registar: UIButton!
+    @IBOutlet weak var comentario: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
         let parque = parquesList
-        print(parque)
-        
+
         lblName.sizeToFit()
         
-        
+        if utilizador == "convidado"{
+            comentarioView.isHidden = true
+            comentario.isHidden = true
+        }else{
+            registar.isHidden = true
+        }
         ref.child("Parques").observe(.childAdded,    with: {
             snapshot in
             
@@ -78,8 +83,7 @@ class DetailParque: UIViewController {
         
         
         let refff =  Database.database().reference().child("Parques").child(parque)
-        print("PRINT LIST")
-        
+
         
         databaseHandle = refff.child("comentario").observe(.value,  with:{(snapshot) in
             
