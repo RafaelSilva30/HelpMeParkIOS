@@ -57,10 +57,13 @@ class ViewController: UIViewController, UITextViewDelegate {
             let barViewControllers = segue.destination as! UITabBarController
             let destinationNv = barViewControllers.viewControllers?[0] as! UINavigationController
             let destinationViewController = destinationNv.viewControllers[0] as! MapViewController
+            
+            
             destinationViewController.utilizador = autenticado
             
+            
         }
-
+        
         
         if(segue.identifier == "adminSegue"){
             let barViewControllers = segue.destination as! UITabBarController

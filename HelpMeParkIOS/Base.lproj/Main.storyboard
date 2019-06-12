@@ -72,7 +72,7 @@
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="EntrarComoConvidado:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7L1-en-yQK"/>
-                                            <segue destination="PIc-gp-kkH" kind="show" identifier="convidadoSegue" id="4LX-fm-1uw"/>
+                                            <segue destination="PIc-gp-kkH" kind="show" identifier="convidadoSegue" id="XJ4-rA-5Ib"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JfI-gH-c04">
@@ -244,6 +244,23 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P0Q-9n-f0m">
+                                                <rect key="frame" x="30" y="477" width="354" height="45"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="0.15768456459999999" green="0.35063943269999998" blue="0.67061978580000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="30"/>
+                                                <state key="normal" title="Registar-se">
+                                                    <color key="titleColor" red="0.93445487490000001" green="1" blue="0.89772244540000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="20"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <segue destination="GNc-yc-MgJ" kind="show" id="6yR-kI-kXE"/>
+                                                </connections>
+                                            </button>
                                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UX7-ce-gEl">
                                                 <rect key="frame" x="20" y="464" width="374" height="366"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -394,12 +411,15 @@
                         <outlet property="Preco15MinutosLbl" destination="rt4-Ig-s4t" id="fn6-nJ-qOT"/>
                         <outlet property="PrecoBaseFdsLbl" destination="10J-1k-hkR" id="0oZ-GX-aGc"/>
                         <outlet property="PrecoBaseSemanaLbl" destination="C8Y-X4-ZaX" id="LPq-Cp-H3p"/>
+                        <outlet property="comentario" destination="pal-C4-aQ5" id="VvO-Ur-SJJ"/>
+                        <outlet property="comentarioView" destination="UX7-ce-gEl" id="oOT-EE-WU4"/>
                         <outlet property="dataComent" destination="K9K-Mk-Khq" id="CSc-63-Ubv"/>
                         <outlet property="lblName" destination="gJB-S6-yOA" id="hML-P4-zbD"/>
                         <outlet property="levelParque" destination="seb-ww-vT9" id="uYc-03-Hje"/>
                         <outlet property="nomeUserComent" destination="02g-T2-CLa" id="PaG-8T-Mze"/>
                         <outlet property="obsComent" destination="9P9-bY-mLp" id="3DR-NV-o7t"/>
                         <outlet property="ratingComent" destination="C5i-VA-kwW" id="IvJ-up-KQy"/>
+                        <outlet property="registar" destination="P0Q-9n-f0m" id="n7e-fp-IKM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U6s-8x-U9W" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -567,7 +587,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eAw-0e-AjA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2065" y="509"/>
+            <point key="canvasLocation" x="-2001" y="421"/>
         </scene>
         <!--Adicionar Parque-->
         <scene sceneID="Dd0-ux-plm">
@@ -892,7 +912,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qnx-cA-QNB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3733" y="437"/>
+            <point key="canvasLocation" x="-3475" y="82"/>
         </scene>
         <!--Comentario-->
         <scene sceneID="9Mz-sc-V7v">
@@ -1164,8 +1184,9 @@
         <image name="user" width="2240" height="2240"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="kuA-UW-F4K"/>
-        <segue reference="N5G-BU-R2b"/>
+        <segue reference="01c-nV-sBk"/>
+        <segue reference="XJ4-rA-5Ib"/>
+        <segue reference="axL-ud-Acp"/>
         <segue reference="Gaf-Cg-hm7"/>
     </inferredMetricsTieBreakers>
 </document>
