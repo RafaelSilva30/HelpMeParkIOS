@@ -124,49 +124,28 @@ class Parques: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
 
     
-  
-   
-    
-    
 
-    
-    
-    
-
-    
 
     //SET FIREBASE REFERENCE
     let ref = Database.database().reference()
     
     var databaseHandle:DatabaseHandle?
-    
-   
+
     
     @IBOutlet weak var tableView: UITableView!
-    
-    
-    
-    
-    
+
     override func viewDidLoad() {
-            
-        
-        
+
         tableView.delegate = self
             
      
             tableView.backgroundView = UIImageView(image: UIImage(named: "table"))
-           
-            
-            
-  
+    
             ref.child("Parques").observe(.childAdded,    with: {
                 snapshot in
                 
                 print(snapshot)
-                
-
-            
+       
                 let nome = (snapshot.value as? NSDictionary)!["nome"] as! String
                 
                 let auxLat = (snapshot.value as? NSDictionary)!["Latitude"] as! String
@@ -200,14 +179,9 @@ class Parques: UIViewController, UITableViewDelegate, UITableViewDataSource {
             let currentLat = snapshot.childSnapshot(forPath:"latitude").value as? String
            
             let currentLng = snapshot.childSnapshot(forPath:"longitude").value as? String
-            
-            
-            
+     
             self.currentLoc = CLLocation(latitude: Double(currentLat!) as! CLLocationDegrees, longitude: Double(currentLng!) as! CLLocationDegrees)
-            
-            
-            
-            
+
             for location in self.coordenadas {
                 print("Locations")
                 print(location)
@@ -222,27 +196,15 @@ class Parques: UIViewController, UITableViewDelegate, UITableViewDataSource {
                     
                     self.closestLocation = location
                     self.smallestDistance = distance
-                    
-                    
-                    
+
                 }
             }
             print("closestLocation: \(self.closestLocation), distance: \(self.smallestDistance)")
           
-            
-            
-            
-           
-            
         })
-       
-        
-    
+
     }
-    
-    
-    
-    
+
 }
 
 

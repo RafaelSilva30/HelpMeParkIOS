@@ -633,6 +633,7 @@
                                                 <connections>
                                                     <action selector="Login:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ezq-J0-mK4"/>
                                                     <action selector="addParque:" destination="oaL-bN-Tfp" eventType="touchUpInside" id="ywg-OV-7Gq"/>
+                                                    <segue destination="PIc-gp-kkH" kind="show" id="kuA-UW-F4K"/>
                                                 </connections>
                                             </button>
                                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fsC-Gs-74T">
@@ -1163,7 +1164,7 @@
         <image name="user" width="2240" height="2240"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="4LX-fm-1uw"/>
+        <segue reference="kuA-UW-F4K"/>
         <segue reference="N5G-BU-R2b"/>
         <segue reference="Gaf-Cg-hm7"/>
     </inferredMetricsTieBreakers>
