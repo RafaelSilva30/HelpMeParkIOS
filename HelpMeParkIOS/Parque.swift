@@ -13,11 +13,12 @@ import MapKit
 class Parque: NSObject{
     
     var nomeParque: String = ""
+    var distancia: Double?
    
 
     
-    init(nome: String) {
-        
+    init(nome: String, distancia: Double? = nil) {
+        self.distancia = distancia
         self.nomeParque = nome
         
 

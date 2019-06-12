@@ -56,7 +56,7 @@ class Parques: UIViewController, UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ParqueViewCell
         
         
-        
+        self.parquesList = parquesList.sorted(by: {$0.distancia! < $1.distancia!})
         cell.lblName.text = self.parquesList[indexPath.row].nomeParque
         
         
@@ -87,7 +87,7 @@ class Parques: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
    func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
         
-    let alert = UIAlertController(title: "Informações", message:"Nome do Parque: " + parquesList[indexPath.row].nomeParque + "\n" + "\n" + " Distancia à sua localizacao: " + String(format:"%.2f",distancias[indexPath.row]) + " KM", preferredStyle: UIAlertController.Style.alert)
+    let alert = UIAlertController(title: "Informações", message:"Nome do Parque: " + parquesList[indexPath.row].nomeParque + "\n" + "\n" + " Distancia à sua localizacao: " + String(format:"%.2f",parquesList[indexPath.row].distancia!) + " KM", preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "Fechar", style: UIAlertAction.Style.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     
@@ -139,72 +139,60 @@ class Parques: UIViewController, UITableViewDelegate, UITableViewDataSource {
         print(utilizador)
 
         tableView.delegate = self
-            
+        
+        
+        
      
             tableView.backgroundView = UIImageView(image: UIImage(named: "table"))
-    
-            ref.child("Parques").observe(.childAdded,    with: {
-                snapshot in
-                
-                print(snapshot)
-       
-                let nome = (snapshot.value as? NSDictionary)!["nome"] as! String
-                
-                let auxLat = (snapshot.value as? NSDictionary)!["Latitude"] as! String
-                
-                let auxLong = (snapshot.value as? NSDictionary)!["Longitude"] as! String
-                
-                let latitude = Double(auxLat)
-                let longitude = Double(auxLong)
-                
-                self.parquesList.append(Parque(nome: nome))
-                
-                self.coordenadas.append(CLLocation(latitude: Double(auxLat) as! CLLocationDegrees, longitude: Double(auxLong) as! CLLocationDegrees))
-                
-                self.tableView.reloadData()
-                
-                print(self.parquesList)
-
-               
-                print("kajsdkjasdkjasdnas")
-                
-                print(self.coordenadas)
-                
-            })
+        
         
         let uid = (Auth.auth().currentUser?.uid)!
-       
+        
         dbHandle = ref.child("Users").child(uid).child("latestLoc").observe(.value, with: {
             (snapshot) in
             
             
             let currentLat = snapshot.childSnapshot(forPath:"latitude").value as? String
-           
+            
             let currentLng = snapshot.childSnapshot(forPath:"longitude").value as? String
-     
+            
             self.currentLoc = CLLocation(latitude: Double(currentLat!) as! CLLocationDegrees, longitude: Double(currentLng!) as! CLLocationDegrees)
-
-            for location in self.coordenadas {
-                print("Locations")
-                print(location)
-                
-                let distance = self.currentLoc.distance(from: location)
-                print("Distancias")
-                
-
-                self.distancias.append(Float((distance) / 1000))
-                
-                if self.smallestDistance == nil || distance < (self.smallestDistance)! {
-                    
-                    self.closestLocation = location
-                    self.smallestDistance = distance
-
-                }
-            }
-            print("closestLocation: \(self.closestLocation), distance: \(self.smallestDistance)")
-          
+            print(self.currentLoc)
+            self.getParques()
+            
         })
 
+        
+    }
+    
+    func getParques() {
+        self.parquesList = []
+        ref.child("Parques").observe(.childAdded,    with: {
+            snapshot in
+            
+            print(snapshot)
+            
+            let nome = (snapshot.value as? NSDictionary)!["nome"] as! String
+            
+            let auxLat = (snapshot.value as? NSDictionary)!["Latitude"] as! String
+            
+            let auxLong = (snapshot.value as? NSDictionary)!["Longitude"] as! String
+            
+            let latitude = Double(auxLat)
+            let longitude = Double(auxLong)
+            let location = CLLocation(latitude: latitude!, longitude: longitude!)
+            let distance = self.currentLoc.distance(from: location)
+            print(nome, distance)
+            self.parquesList.append(Parque(nome: nome, distancia: Double((distance) / 1000)))
+            print(self.parquesList)
+            self.coordenadas.append(CLLocation(latitude: Double(auxLat) as! CLLocationDegrees, longitude: Double(auxLong) as! CLLocationDegrees))
+            
+            self.tableView.reloadData()
+            
+            print(self.parquesList)
+            
+            
+        })
     }
 
 }

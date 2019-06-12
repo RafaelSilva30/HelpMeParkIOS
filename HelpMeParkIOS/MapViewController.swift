@@ -318,8 +318,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             
             self.mapa.showsUserLocation = true
             
-           
-            
             self.mapaPin = "True"
             
             
