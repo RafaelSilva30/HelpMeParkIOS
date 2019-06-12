@@ -59,13 +59,13 @@ class Parques: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         cell.lblName.text = self.parquesList[indexPath.row].nomeParque
         
-       // cell.lblDistancia.text! = self.distancias[indexPath.row]
         
         //Label do Nome
         cell.lblName.font = UIFont(name: "Arial-BoldMT", size:30);
         cell.lblName.textColor = UIColor.white
         cell.lblName.sizeToFit()
         
+       
 
         cell.accessoryType = UITableViewCell.AccessoryType.detailDisclosureButton
        
@@ -87,10 +87,16 @@ class Parques: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
    func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
         
-    let alert = UIAlertController(title: "Informacoes", message:"Nome do Parque: " + parquesList[indexPath.row].nomeParque, preferredStyle: UIAlertController.Style.alert)
+    let alert = UIAlertController(title: "Informações", message:"Nome do Parque: " + parquesList[indexPath.row].nomeParque + "\n" + "\n" + " Distancia à sua localizacao: " + String(format:"%.2f",distancias[indexPath.row]) + " KM", preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "Fechar", style: UIAlertAction.Style.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
+    
+        alert.view.tintColor = UIColor.red;
+    
+   
     }
+    
+    
     
    
   
@@ -209,13 +215,10 @@ class Parques: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 let distance = self.currentLoc.distance(from: location)
                 print("Distancias")
                 
-                self.distancias.append(Float(distance)
+                self.distancias.append(Float((distance) / 1000))
                 
                
-                print("AAAAA")
-             
-                
-                
+
                 
                 if self.smallestDistance == nil || distance < (self.smallestDistance)! {
                     
