@@ -215,7 +215,10 @@ class Parques: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 let distance = self.currentLoc.distance(from: location)
                 print("Distancias")
                 
-      if self.smallestDistance == nil || distance < (self.smallestDistance)! {
+
+                self.distancias.append(Float((distance) / 1000))
+                
+                if self.smallestDistance == nil || distance < (self.smallestDistance)! {
                     
                     self.closestLocation = location
                     self.smallestDistance = distance
