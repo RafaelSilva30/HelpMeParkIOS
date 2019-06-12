@@ -47,18 +47,24 @@ class DetailParque: UIViewController {
     
     @IBOutlet weak var registar: UIButton!
     @IBOutlet weak var comentario: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         let parque = parquesList
 
+        print(utilizador)
+        
         lblName.sizeToFit()
         
         if utilizador == "convidado"{
             comentarioView.isHidden = true
             comentario.isHidden = true
+            
         }else{
             registar.isHidden = true
         }
+        
         ref.child("Parques").observe(.childAdded,    with: {
             snapshot in
             

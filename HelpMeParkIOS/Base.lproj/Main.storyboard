@@ -23,7 +23,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iB0-ct-9x5">
-                                <rect key="frame" x="20" y="350" width="374" height="379"/>
+                                <rect key="frame" x="20" y="350" width="374" height="462"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yUC-rL-94B">
@@ -43,7 +43,7 @@
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ainda não tem conta ?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="olH-wa-aPo">
-                                        <rect key="frame" x="50" y="321" width="197" height="26"/>
+                                        <rect key="frame" x="19" y="321" width="197" height="26"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -104,6 +104,21 @@
                                             <segue destination="GNc-yc-MgJ" kind="show" identifier="Segueidentifier" id="01c-nV-sBk"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Edz-MX-nbs">
+                                        <rect key="frame" x="224" y="405" width="90" height="31"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
+                                        <state key="normal" title="Clique Aqui">
+                                            <color key="titleColor" red="0.15768456459999999" green="0.35063943269999998" blue="0.67061978580000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Recuperar Password ?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xk2-IL-rwv">
+                                        <rect key="frame" x="19" y="407" width="197" height="26"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <userDefinedRuntimeAttributes>
@@ -135,7 +150,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2333.3333333333335" y="-357.58928571428572"/>
+            <point key="canvasLocation" x="-852.17391304347836" y="-423.21428571428572"/>
         </scene>
         <!--Detail Parque-->
         <scene sceneID="UfM-ZF-n6c">
@@ -459,7 +474,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoti" translatesAutoresizingMaskIntoConstraints="NO" id="hlV-Nx-JM5">
-                                                    <rect key="frame" x="20" y="10" width="100" height="23.5"/>
+                                                    <rect key="frame" x="20" y="10" width="16" height="23.5"/>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
@@ -587,7 +602,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eAw-0e-AjA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2001" y="421"/>
+            <point key="canvasLocation" x="-1758" y="320"/>
         </scene>
         <!--Adicionar Parque-->
         <scene sceneID="Dd0-ux-plm">
@@ -797,7 +812,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Z2d-vM-b5E">
-                                <rect key="frame" x="20" y="350" width="374" height="379"/>
+                                <rect key="frame" x="20" y="350" width="374" height="462"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Foh-lL-Rrx">
@@ -825,14 +840,6 @@
                                             <action selector="buttonRegistar:" destination="GNc-yc-MgJ" eventType="touchUpInside" id="X19-ro-gvW"/>
                                             <segue destination="BYZ-38-t0r" kind="show" identifier="registerToLogin" id="vsz-nZ-dhY"/>
                                         </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="57q-KS-x9h">
-                                        <rect key="frame" x="202" y="312" width="90" height="31"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
-                                        <state key="normal" title="Clique Aqui">
-                                            <color key="titleColor" red="0.15768456459999999" green="0.35063943269999998" blue="0.67061978580000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        </state>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="email" translatesAutoresizingMaskIntoConstraints="NO" id="7cx-xS-lFn">
                                         <rect key="frame" x="16" y="27" width="35" height="37"/>
@@ -863,12 +870,23 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Já tem conta ? " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GB4-GR-bzm">
-                                        <rect key="frame" x="89" y="314" width="197" height="26"/>
+                                        <rect key="frame" x="20" y="329" width="197" height="26"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="57q-KS-x9h">
+                                        <rect key="frame" x="142" y="327" width="90" height="31"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
+                                        <state key="normal" title="Clique Aqui">
+                                            <color key="titleColor" red="0.15768456459999999" green="0.35063943269999998" blue="0.67061978580000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="BYZ-38-t0r" kind="show" id="2Wp-53-ZOD"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <userDefinedRuntimeAttributes>
@@ -893,7 +911,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8wc-Lq-mia" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-809" y="-358"/>
+            <point key="canvasLocation" x="100.00000000000001" y="-358.25892857142856"/>
         </scene>
         <!--Parques-->
         <scene sceneID="uVZ-an-qur">
@@ -1170,6 +1188,87 @@
             </objects>
             <point key="canvasLocation" x="-265.21739130434787" y="496.875"/>
         </scene>
+        <!--Recuperar Password-->
+        <scene sceneID="6zf-OK-Hs5">
+            <objects>
+                <viewController id="DB1-vU-Mvx" customClass="RecuperarPassword" customModule="HelpMeParkIOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bT-Tr-nNv">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="back" translatesAutoresizingMaskIntoConstraints="NO" id="oKA-6o-1Mb">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vP9-Ja-VhI">
+                                <rect key="frame" x="20" y="350" width="374" height="379"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cTs-MC-IsY">
+                                        <rect key="frame" x="59" y="77" width="255" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.87688273189999999" green="0.98399752380000005" blue="0.99607616659999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nVj-tp-e0m">
+                                        <rect key="frame" x="19" y="200" width="337" height="49"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.15768456459999999" green="0.35063943269999998" blue="0.67061978580000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="30"/>
+                                        <state key="normal" title="Recuperar Password">
+                                            <color key="titleColor" red="0.93445487490000001" green="1" blue="0.89772244540000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="EntrarComoConvidado:" destination="DB1-vU-Mvx" eventType="touchUpInside" id="nk0-zM-s62"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logoti" translatesAutoresizingMaskIntoConstraints="NO" id="ONl-aO-knj">
+                                <rect key="frame" x="40" y="118" width="335" height="176"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="qDW-jo-1Zk"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="BjE-lx-Eyn"/>
+                    <connections>
+                        <outlet property="email" destination="cTs-MC-IsY" id="mss-ZA-bOy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zQa-g7-lJc" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2354" y="-271"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="UbE-9X-t3g">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="x1i-sE-Bhj" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2sC-Tk-Qoy">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="89v-Uy-pHs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3122" y="-336"/>
+        </scene>
     </scenes>
     <resources>
         <image name="add" width="25" height="25"/>
@@ -1186,7 +1285,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="01c-nV-sBk"/>
         <segue reference="XJ4-rA-5Ib"/>
-        <segue reference="axL-ud-Acp"/>
-        <segue reference="Gaf-Cg-hm7"/>
+        <segue reference="N5G-BU-R2b"/>
+        <segue reference="2Wp-53-ZOD"/>
     </inferredMetricsTieBreakers>
 </document>

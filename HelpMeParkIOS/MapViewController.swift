@@ -72,7 +72,11 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         
         let centerLocation = CLLocation(latitude: 12, longitude: 12)
         
+       
+        //let longPressRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(self.longPressed(_:)))
         
+        
+      //  mapa.addGestureRecognizer(longPressRecognizer)
         
         verificacaoTabBar()
         
@@ -112,18 +116,14 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         })
         
       
-        let longPressRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(self.longPressed(_:)))
-        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.tap(_:)))
-        
-   
+       
     
     }
     
     
     
    
-    
-    
+   
     
     
     
@@ -166,38 +166,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     }
     
 
-    @objc func longPressed(_ sender: UILongPressGestureRecognizer){
-        
-        print("LONGOOO")
-        if sender.state.rawValue == 1{
-            let touchLocation = sender.location(in: mapa)
-            let locationCoordinate =  mapa.convert(touchLocation, toCoordinateFrom: mapa)
-
-            
-            let location = CLLocation(latitude: locationCoordinate.latitude, longitude: locationCoordinate.longitude)
-            
-            calcularota(latitude: locationCoordinate.latitude , longitude: locationCoordinate.longitude)
-            }
-        
-            //Coordenadas destino obtidas pelo long press
-        }
+   
     
-    @objc func tap(_ sender: UITapGestureRecognizer){
-        
-        print("TAPTAP")
-        if sender.state.rawValue == 1{
-            let touchLocation = sender.location(in: mapa)
-            let locationCoordinate =  mapa.convert(touchLocation, toCoordinateFrom: mapa)
-            
-            
-            let location = CLLocation(latitude: locationCoordinate.latitude, longitude: locationCoordinate.longitude)
-            
-            calcularota(latitude: locationCoordinate.latitude , longitude: locationCoordinate.longitude)
-        }
-        
-        //Coordenadas destino obtidas pelo long press
-    }
     
+    /*
     
     func calcularota(latitude:CLLocationDegrees, longitude:CLLocationDegrees){
         let request = MKDirections.Request()
@@ -220,6 +192,13 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         
     }
     
+    @objc func longPressed(_ sender:UILongPressGestureRecognizer){
+        print("LONGTAP")
+        if sender.state.rawValue == 1{
+            calcularota(
+        }
+        
+    
     func showRoute(_ response: MKDirections.Response){
         
         for route in response.routes{
@@ -230,7 +209,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             }
         }
     }
-   
+   */
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "pinDetalhe" {
@@ -241,7 +220,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             
         }
         
-    
+            
+            
+        
     
     }
 
@@ -251,12 +232,12 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
    
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        print(self.mapaPin)
+        
         if(self.mapaPin == "True"){
             
             let reuseIdentifier = "pin"
             
-            print(mapaPin)
+           
             let annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: reuseIdentifier)
             
             annotationView.image = UIImage(named: "blueDott")

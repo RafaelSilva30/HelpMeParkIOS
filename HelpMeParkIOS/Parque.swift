@@ -19,9 +19,7 @@ class Parque: NSObject{
     init(nome: String) {
         
         self.nomeParque = nome
-      
-      
-    
+        
     }
 }
 

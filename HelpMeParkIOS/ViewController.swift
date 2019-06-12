@@ -61,8 +61,17 @@ class ViewController: UIViewController, UITextViewDelegate {
             
             destinationViewController.utilizador = autenticado
             
+            let barViewControllers1 = segue.destination as! UITabBarController
+            let destinationNv1 = barViewControllers1.viewControllers?[1] as! UINavigationController
+            let destinationViewController1 = destinationNv1.viewControllers[0] as!Parques
+            
+            
+            destinationViewController1.utilizador = autenticado
+            
             
         }
+        
+
         
         
         if(segue.identifier == "adminSegue"){

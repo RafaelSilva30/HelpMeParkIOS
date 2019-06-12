@@ -25,7 +25,9 @@ class Parques: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     
     var selectedLabel:String?
+    
     var utilizador: String = ""
+    
     var doubleToString: String = ""
     
     var closestLocation: CLLocation?
@@ -36,12 +38,14 @@ class Parques: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var dbHandle: DatabaseHandle?
     
     
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-      
-        
         return parquesList.count
-        
-        
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
     }
     
     
@@ -52,14 +56,11 @@ class Parques: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-      
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ParqueViewCell
-      
-    
-        cell.lblName.text! = parquesList[indexPath.row].nomeParque
+    let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ParqueViewCell
         
-            
+    cell.lblName.text! = parquesList[indexPath.row].nomeParque
+
         //Label do Nome
         cell.lblName.font = UIFont(name: "Arial-BoldMT", size:30);
         cell.lblName.textColor = UIColor.white
@@ -84,16 +85,16 @@ class Parques: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
  
     
-    
+//Detail Disclosured Button
    func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
         
     let alert = UIAlertController(title: "Informações", message:"Nome do Parque: " + parquesList[indexPath.row].nomeParque + "\n" + "\n" + " Distancia à sua localizacao: " + String(format:"%.2f",distancias[indexPath.row]) + " KM", preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "Fechar", style: UIAlertAction.Style.default, handler: nil))
+    
         self.present(alert, animated: true, completion: nil)
     
         alert.view.tintColor = UIColor.red;
     
-   
     }
     
     
@@ -114,14 +115,11 @@ class Parques: UIViewController, UITableViewDelegate, UITableViewDataSource {
             let idx = sender as! IndexPath
             let vcdetalhe = (segue.destination as! DetailParque)
             vcdetalhe.parquesList = parquesList[idx.row].nomeParque
+            vcdetalhe.utilizador = utilizador
         }
     }
     
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
-        return 100
-    }
+   
 
     
 
@@ -136,9 +134,17 @@ class Parques: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     override func viewDidLoad() {
         
+        print("O utilizador e:")
+        
+        print(self.tabBarController!.selectedIndex)
+        
         print(utilizador)
 
         tableView.delegate = self
+        
+       
+       
+        
             
 
             tableView.backgroundView = UIImageView(image: UIImage(named: "table"))
@@ -146,7 +152,7 @@ class Parques: UIViewController, UITableViewDelegate, UITableViewDataSource {
             ref.child("Parques").observe(.childAdded,    with: {
                 snapshot in
                 
-                print(snapshot)
+               
        
                 let nome = (snapshot.value as? NSDictionary)!["nome"] as! String
                 
@@ -161,7 +167,7 @@ class Parques: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 
                 self.coordenadas.append(CLLocation(latitude: Double(auxLat) as! CLLocationDegrees, longitude: Double(auxLong) as! CLLocationDegrees))
                 
-    
+                
                 
             })
     
@@ -179,25 +185,24 @@ class Parques: UIViewController, UITableViewDelegate, UITableViewDataSource {
             self.currentLoc = CLLocation(latitude: Double(currentLat!) as! CLLocationDegrees, longitude: Double(currentLng!) as! CLLocationDegrees)
 
             for location in self.coordenadas {
-                print("Locations")
-                print(location)
                 
                 
                 
-                let distance = (self.currentLoc.distance(from: location))
+                
+            let distance = (self.currentLoc.distance(from: location))
                 
                 
-                print("Distancias")
+           
                 
 
-                self.distancias.append(Float((distance) / 1000))
+            self.distancias.append(Float((distance) / 1000))
                 
                 
                 
-              self.distancias.sort() { $0.distance(to: Float(distance)) > $1.distance(to: Float(distance))}
+            self.distancias.sort() { $0.distance(to: Float(distance)) > $1.distance(to: Float(distance))}
                
                
-                self.tableView.reloadData()
+            self.tableView.reloadData()
                 
                
             }
