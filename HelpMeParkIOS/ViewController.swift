@@ -68,6 +68,7 @@ class ViewController: UIViewController, UITextViewDelegate {
             
             destinationViewController1.utilizador = autenticado
             
+           
             
         }
         

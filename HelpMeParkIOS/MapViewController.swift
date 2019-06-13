@@ -64,6 +64,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     var mapaPin: String = ""
     
     
+    var nomeParque:String = ""
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
        
@@ -149,7 +153,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
  
     
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        
        
+       
+        if(control == view.rightCalloutAccessoryView){
             let anno = view.annotation as! customPin
             print(anno.title)
             // then access the properties of anno and use them for the segue
@@ -157,59 +164,44 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             nomeP = anno.title!
             print(nomeP)
             self.performSegue(withIdentifier:"pinDetalhe",sender: anno)
-        
-       
-        
-        
-        
-       
+            
+            
+            
+        }else{
+            
+            let annot = view.annotation as! customPin
+            
+            // then access the properties of anno and use them for the segue
+            
+            nomeParque = annot.title!
+            
+            calculaRota(latitude: (Double(coordenadas.latitude)), longitude: (Double(coordenadas.longitude)))
+            
+            }
     }
+    
+    
+    
+            // MARK: - MKMapViewDelegate
+            
+            func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+                
+                let renderer = MKPolylineRenderer(overlay: overlay)
+                
+                renderer.strokeColor = UIColor.blue
+                
+                renderer.lineWidth = 5.0
+                
+                return renderer
+            }
+    
+        
+        
+    
     
 
    
     
-    
-    /*
-    
-    func calcularota(latitude:CLLocationDegrees, longitude:CLLocationDegrees){
-        let request = MKDirections.Request()
-        request.source = MKMapItem(placemark: MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: latitude, longitude: longitude), addressDictionary: nil)) // origem ponto do GPS
-        request.destination = MKMapItem(placemark: MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: coordenadas.latitude, longitude: coordenadas.longitude), addressDictionary: nil)) // destino  ponto long press
-        print("heheheh cheguei")
-        request.requestsAlternateRoutes = false
-        
-        let directions = MKDirections(request: request)
-        
-        directions.calculate(completionHandler: {(response,error) in
-            
-            if(error != nil){
-                print("Erro a conseguir as direcoes")
-            }else{
-                self.showRoute(response!)
-            }
-        })
-        
-        
-    }
-    
-    @objc func longPressed(_ sender:UILongPressGestureRecognizer){
-        print("LONGTAP")
-        if sender.state.rawValue == 1{
-            calcularota(
-        }
-        
-    
-    func showRoute(_ response: MKDirections.Response){
-        
-        for route in response.routes{
-            mapa.addOverlay(route.polyline,level: MKOverlayLevel.aboveRoads)
-            
-            for step in route.steps{
-                print(step.instructions)
-            }
-        }
-    }
-   */
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "pinDetalhe" {
@@ -262,7 +254,20 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             
             let button = UIButton(type: .detailDisclosure) as UIButton
             
+        
+            
+            
+          
+            
+            let directionButton = UIButton(type: .detailDisclosure)
+            
+            directionButton.setImage( UIImage(named: "buttonCar"), for: .normal)
+            
+            annotationView.leftCalloutAccessoryView = directionButton
+            
             annotationView.rightCalloutAccessoryView = button
+            
+            
             
             return annotationView
             
@@ -295,11 +300,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             self.auxLong.text = String(format:"%.7f", self.coordenadas.longitude)
             
             let data1 = ["latitude": auxLat.text, "longitude": auxLong.text]
+            
             self.reff.child("Users").child(uid).child("latestLoc").setValue(data1)
             
             self.mapa.showsUserLocation = true
-            
-           
             
             self.mapaPin = "True"
             
@@ -340,11 +344,67 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     
     }
+
+    //Direções
+    
+func calculaRota(latitude: CLLocationDegrees, longitude: CLLocationDegrees) {
     
     
+    ref.child("Parques").observe(.childAdded, with: { (snapshot) in
+        
+    let titulo  =  (snapshot.value as AnyObject?)!["nome"] as! String?
+    let latitude = (snapshot.value as AnyObject?)!["Latitude"] as! String?
+    let longitude = (snapshot.value as AnyObject?)!["Longitude"] as! String?
     
+    
+        if(titulo == self.nomeParque){
+            
+            
+            
+            let coordenadasPin = CLLocationCoordinate2D(latitude: (Double(latitude!))!, longitude: (Double(longitude!))!)
+            
+            let directionRequest = MKDirections.Request()
+            
+            
+            directionRequest.source = MKMapItem(placemark: MKPlacemark(coordinate: self.coordenadas, addressDictionary: nil))
+           
+           
+            directionRequest.destination = MKMapItem(placemark: MKPlacemark(coordinate: coordenadasPin, addressDictionary: nil))
+            
+            directionRequest.requestsAlternateRoutes = false
+            
+            let directions = MKDirections(request: directionRequest)
+            
+            
+            
+            directions.calculate(completionHandler: {(response,error) in
+                
+                if error != nil{
+                    print("erro")
+                }else{
+                    self.showRoute(response!)
+                }
+            })
+        }
+        
+        
+        })
+   
     
     
 }
+    
+    func showRoute(_ response:MKDirections.Response){
+        
+        for  route in response.routes{
+            
+            mapa.addOverlay(route.polyline,level:MKOverlayLevel.aboveRoads)
+            for step in route.steps {
+                
+                print(step.instructions)
+            }
+        }
+    }
 
+}
 

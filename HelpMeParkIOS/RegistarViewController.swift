@@ -23,6 +23,7 @@ class RegistarViewController: UIViewController,UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+         self.dismiss(animated: false, completion: nil)
         
         
     }
