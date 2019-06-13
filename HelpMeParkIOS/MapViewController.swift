@@ -74,7 +74,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         
         print(utilizador)
         
-        let centerLocation = CLLocation(latitude: 12, longitude: 12)
+        let centerLocation = CLLocation(latitude: 41.697586, longitude: -8.827390)
         
        
         //let longPressRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(self.longPressed(_:)))
@@ -133,7 +133,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     
     func centerMapOnLocation(location: CLLocation){
-        let regionRadius: CLLocationDistance = 7000000
+        let regionRadius: CLLocationDistance = 70000
         let coordinateRegion = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
         
         mapa.setRegion(coordinateRegion, animated: true)
@@ -282,7 +282,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             
           
             
-            let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 100, longitudeDelta: 100))
+            let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.08, longitudeDelta: 0.08))
             self.mapa.setRegion(region, animated: true)
             
             self.coordenadas = center
